@@ -1,25 +1,42 @@
-import logo from './logo.svg';
 import './App.css';
+import {Menu} from "./components/Menu";
+import {AboutFund} from "./components/AboutFund";
+import {Gallery} from "./components/Gallery";
+import {Help} from "./components/Help";
+import {Contacts} from "./components/Contacts";
+import {Cabinet} from "./components/Cabinet";
+import {MainPage} from "./components/MainPage";
+import {Articles} from "./components/Articles";
+import {Dogs} from "./components/Dogs";
+import {OneDog} from "./components/OneDog";
+import {Cats} from "./components/Cats";
+import {OneCat} from "./components/OneCat";
+import {Footer} from "./components/Footer";
+import {Header} from "./components/Header";
+import {MainBanner} from "./components/MainBanner";
+import {OnePost} from "./components/OnePost";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <div>
+        <Menu/>
+        <Header/>
+        <MainBanner/>
+        <MainPage/>
+        <AboutFund/>
+        <Gallery/>
+        <Dogs/>
+        <OneDog/>
+        <Cats/>
+        <OneCat/>
+        <Help/>
+        <Articles/>
+        <OnePost/>
+        <Contacts/>
+        <Cabinet/>
+        <Footer/>
+      </div>
+  )
 }
 
 export default App;
