@@ -42,7 +42,7 @@ export class Dogs extends React.Component{
                             <div className="single-cat-list">
                                 <img src="img/dg5.jpg" alt="" className="img-fluid"/>
                                     <div className="overlay">
-                                        <div className="text">Siamese Dog1</div>
+                                        <div className="text">Siamese Dog</div>
                                     </div>
                             </div>
                         </div>
