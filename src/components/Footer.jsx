@@ -80,7 +80,7 @@ export class Footer extends React.Component{
                 <div className="copyright-text">
                     <div className="container">
                         <div className="row footer-bottom d-flex justify-content-between">
-                            <p className="col-lg-8 col-sm-6 footer-text m-0 text-white"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            <p className="col-lg-8 col-sm-6 footer-text m-0 text-white">
                                 Copyright &copy;
                                 All rights reserved | This template is made with <i className="fa fa-heart-o"
                                                                                     aria-hidden="true"></i> by <a
