@@ -15,26 +15,29 @@ import {Footer} from "./components/Footer";
 import {Header} from "./components/Header";
 import {MainBanner} from "./components/MainBanner";
 import {OnePost} from "./components/OnePost";
+import {BrowserRouter} from "react-router-dom";
 
 function App() {
   return (
       <div>
-        <Menu/>
-        <Header/>
-        <MainBanner/>
-        <MainPage/>
-        <AboutFund/>
-        <Gallery/>
-        <Dogs/>
-        <OneDog/>
-        <Cats/>
-        <OneCat/>
-        <Help/>
-        <Articles/>
-        <OnePost/>
-        <Contacts/>
-        <Cabinet/>
-        <Footer/>
+          <BrowserRouter>
+              <Menu/>
+              <Header/>
+              <MainBanner/>
+              <MainPage/>
+              <AboutFund/>
+              <Gallery/>
+              <Dogs/>
+              <OneDog/>
+              <Cats/>
+              <OneCat/>
+              <Help/>
+              <Articles/>
+              <OnePost/>
+              <Contacts/>
+              <Cabinet/>
+              <Footer/>
+          </BrowserRouter>
       </div>
   )
 }

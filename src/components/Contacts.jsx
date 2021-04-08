@@ -6,7 +6,7 @@ export class Contacts extends React.Component{
             <section className="contact-page-area section-gap">
                 <div className="container">
                     <div className="row">
-                        <div className="map-wrap" style="width:100%; height: 445px;" id="map"></div>
+                        <div className="map-wrap" style={{width:'100%', height: 445}} id="map"></div>
                         <div className="col-lg-4 d-flex flex-column address-wrap">
                             <div className="single-contact-address d-flex flex-row">
                                 <div className="icon">
@@ -63,9 +63,9 @@ export class Contacts extends React.Component{
                                                   onBlur="this.placeholder = 'Messege'" required=""></textarea>
                                     </div>
                                     <div className="col-lg-12 d-flex justify-content-between">
-                                        <div className="alert-msg" style="text-align: left;"></div>
-                                        <button className="genric-btn primary circle" style="float: right;">Send
-                                            Message
+                                        <div className="alert-msg" style={{textAlign: "left"}}></div>
+                                        <button className="genric-btn primary circle" style={{float: "right"}}>
+                                            Send Message
                                         </button>
                                     </div>
                                 </div>
