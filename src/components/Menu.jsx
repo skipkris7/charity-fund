@@ -1,9 +1,10 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 
 export class Menu extends React.Component{
     render(){
         return(
+            // eslint-disable-next-line react/jsx-no-duplicate-props
             <header id="header" id="home" style={{background:'black'}}>
                 <div className="container main-menu">
                     <div className="row align-items-center justify-content-between d-flex">
@@ -19,7 +20,9 @@ export class Menu extends React.Component{
                                 <li><Link to="volunteer.html">Помочь</Link></li>
                                 <li className="menu-has-children"><Link to="">Полезные статьи</Link></li>
                                 <li><Link to="contact.html">Контакты</Link></li>
-                                <li className="menu-has-children"><Link to="">Кабинет</Link></li>
+                                <li className="nav-item">
+                                    <NavLink className="nav-link" to="/admin">Кабинет</NavLink>
+                                </li>
                             </ul>
                         </nav>
                     </div>

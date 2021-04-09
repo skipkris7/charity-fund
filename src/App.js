@@ -4,7 +4,6 @@ import {AboutFund} from "./components/AboutFund";
 import {Gallery} from "./components/Gallery";
 import {Help} from "./components/Help";
 import {Contacts} from "./components/Contacts";
-import {Cabinet} from "./components/Cabinet";
 import {MainPage} from "./components/MainPage";
 import {Articles} from "./components/Articles";
 import {Dogs} from "./components/Dogs";
@@ -15,7 +14,9 @@ import {Footer} from "./components/Footer";
 import {Header} from "./components/Header";
 import {MainBanner} from "./components/MainBanner";
 import {OnePost} from "./components/OnePost";
+import {Admin} from "./admin/Admin";
 import {BrowserRouter} from "react-router-dom";
+
 
 function App() {
   return (
@@ -35,8 +36,8 @@ function App() {
               <Articles/>
               <OnePost/>
               <Contacts/>
-              <Cabinet/>
               <Footer/>
+              <Admin/>
           </BrowserRouter>
       </div>
   )
