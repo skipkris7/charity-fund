@@ -9,7 +9,7 @@ export class Menu extends React.Component{
                 <div className="container main-menu">
                     <div className="row align-items-center justify-content-between d-flex">
                         <div id="logo">
-                            <Link to="index.html"><img src="img/logo.png" alt="" title=""/></Link>
+                            <Link to="index.html"><img src='' alt=''/></Link>
                         </div>
                         <nav id="nav-menu-container">
                             <ul className="nav-menu">

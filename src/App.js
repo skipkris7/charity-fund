@@ -15,7 +15,7 @@ import {Header} from "./components/Header";
 import {MainBanner} from "./components/MainBanner";
 import {OnePost} from "./components/OnePost";
 import {Admin} from "./admin/Admin";
-import {BrowserRouter} from "react-router-dom";
+import {Route,BrowserRouter} from "react-router-dom";
 
 
 function App() {
@@ -25,19 +25,19 @@ function App() {
               <Menu/>
               <Header/>
               <MainBanner/>
-              <MainPage/>
-              <AboutFund/>
-              <Gallery/>
-              <Dogs/>
-              <OneDog/>
-              <Cats/>
-              <OneCat/>
-              <Help/>
-              <Articles/>
-              <OnePost/>
-              <Contacts/>
+              <Route exact path="/" render={()=><MainPage/>}/>
+              <Route path="/about" render={()=><AboutFund/>}/>
+              <Route path="/gallery" render={()=><Gallery/>}/>
+              <Route path="/dogs" render={()=><Dogs/>}/>
+              <Route path="/dog" render={()=><OneDog/>}/>
+              <Route path="/cats" render={()=><Cats/>}/>
+              <Route path="/cat" render={()=><OneCat/>}/>
+              <Route path="/help" render={()=><Help/>}/>
+              <Route path="/articles" render={()=><Articles/>}/>
+              <Route path="/post" render={()=><OnePost/>}/>
+              <Route path="/contacts" render={()=><Contacts/>}/>
               <Footer/>
-              <Admin/>
+              <Route path="/admin" render={()=><Admin/>}/>
           </BrowserRouter>
       </div>
   )
