@@ -1,20 +1,14 @@
 import React from 'react';
+import { FaPaw } from "react-icons/fa";
 
 export class MainPage extends React.Component{
     render(){
         return(
-            <section className="callto-top-area section-gap">
-                <div className="container">
-                    <div className="row justify-content-between callto-top-wrap pt-40 pb-40">
-                        <div className="col-lg-8 callto-top-left">
-                            <h1>Please select your favourite pet</h1>
-                        </div>
-                        <div className="col-lg-4 callto-top-right">
-                            <a href="#" className="primary-btn">Fill Adoption Form</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <div className="container my-5">
+                <h4 className="text mb-2"><FaPaw/> Помогаем бездомным животным, в том числе брошенным.</h4>
+                <h4 className="text mb-2"><FaPaw/> Создаем условия для социализации и поиска дома для животных.</h4>
+                <h4 className="text mb-2"><FaPaw/> Поддерживаем волонтерское движение и улучшаем условия проживания животных в приютах.</h4>
+            </div>
         )
     }
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 export class OneDog extends React.Component{
     render(){
@@ -407,6 +408,14 @@ export class OneDog extends React.Component{
                                         <li><a href="#">Lifestyle</a></li>
                                         <li><a href="#">Adventure</a></li>
                                     </ul>
+                                </div>
+                                <div className="row justify-content-between callto-top-wrap pt-40 pb-40">
+                                    <div className="col-lg-8 callto-top-left">
+                                        <h1>Please select your favourite pet</h1>
+                                    </div>
+                                    <div className="col-lg-4 callto-top-right">
+                                        <Link to="#" className="primary-btn">Fill Adoption Form</Link>
+                                    </div>
                                 </div>
                             </div>
                         </div>

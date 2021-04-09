@@ -1,27 +1,55 @@
 import React from 'react';
 import {Link, NavLink} from "react-router-dom";
 
+
 export class Menu extends React.Component{
     render(){
         return(
-            // eslint-disable-next-line react/jsx-no-duplicate-props
-            <header id="header" id="home" style={{background:'black'}}>
+            <header id="header" style={{background:'rgba(255,255,255,0.73)', height:'90px'}}>
                 <div className="container main-menu">
                     <div className="row align-items-center justify-content-between d-flex">
                         <div id="logo">
-                            <Link to="index.html"><img src='' alt=''/></Link>
+                            <Link to="/"><img className='logo' src={'img/fund-logo/logo1.png'} alt='logo'/></Link>
                         </div>
                         <nav id="nav-menu-container">
                             <ul className="nav-menu">
-                                <li className="menu-active"><Link to="index.html">Главная</Link></li>
-                                <li><Link to="about.html">О нас</Link></li>
-                                <li><Link to="cats.html">Кошки</Link></li>
-                                <li><Link to="dogs.html">Собаки</Link></li>
-                                <li><Link to="volunteer.html">Помочь</Link></li>
-                                <li className="menu-has-children"><Link to="">Полезные статьи</Link></li>
-                                <li><Link to="contact.html">Контакты</Link></li>
+                                <li className="menu-active">
+                                    <NavLink className="nav-link" to="/">
+                                        <h6 className="text">Главная</h6>
+                                    </NavLink>
+                                </li>
                                 <li className="nav-item">
-                                    <NavLink className="nav-link" to="/admin">Кабинет</NavLink>
+                                    <NavLink className="nav-link" to="/about">
+                                        <h6 className="text">О нас</h6>
+                                    </NavLink>
+                                </li>
+                                <li className="nav-item">
+                                    <NavLink className="nav-link" to="/cats">
+                                        <h6 className="text">Кошки</h6>
+                                    </NavLink>
+                                </li>
+                                <li className="nav-item">
+                                    <NavLink className="nav-link" to="/dogs">
+                                        <h6 className="text">Собаки</h6>
+                                    </NavLink>
+                                </li>
+                                <li className="nav-item">
+                                    <NavLink className="nav-link" to="/help">
+                                        <h6 className="text">Помочь</h6>
+                                    </NavLink>
+                                </li>
+                                <li className="nav-item">
+                                    <NavLink className="nav-link" to="/articles">
+                                        <h6 className="text">Полезные статьи</h6>
+                                    </NavLink>
+                                </li>
+                                <li className="nav-item">
+                                    <NavLink className="nav-link" to="/contacts">
+                                        <h6 className="text">Контакты</h6>
+                                    </NavLink>
+                                </li>
+                                <li className="nav-item">
+                                    <NavLink className="nav-link" style={{color:'grey'}} to="/admin">Кабинет</NavLink>
                                 </li>
                             </ul>
                         </nav>

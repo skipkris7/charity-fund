@@ -1,4 +1,5 @@
 import './App.css';
+import React from "react";
 import {Menu} from "./components/Menu";
 import {AboutFund} from "./components/AboutFund";
 import {Gallery} from "./components/Gallery";
@@ -36,8 +37,8 @@ function App() {
               <Route path="/articles" render={()=><Articles/>}/>
               <Route path="/post" render={()=><OnePost/>}/>
               <Route path="/contacts" render={()=><Contacts/>}/>
-              <Footer/>
               <Route path="/admin" render={()=><Admin/>}/>
+              <Footer/>
           </BrowserRouter>
       </div>
   )
