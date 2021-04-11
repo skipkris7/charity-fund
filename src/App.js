@@ -24,8 +24,8 @@ function App() {
       <div>
           <BrowserRouter>
               <Menu/>
-              <Header/>
-              <MainBanner/>
+              <Route exact path="/" render={()=><Header/>}/>
+              <Route exact path="/" render={()=><MainBanner/>}/>
               <Route exact path="/" render={()=><MainPage/>}/>
               <Route path="/about" render={()=><AboutFund/>}/>
               <Route path="/gallery" render={()=><Gallery/>}/>

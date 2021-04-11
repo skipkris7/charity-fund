@@ -31,7 +31,7 @@ export class Footer extends React.Component{
                                 <ul className="list-contact">
                                     <li className="flex-row d-flex">
                                         <div className="icon">
-                                            <FaHome/>
+                                            <FaHome color={'white'}/>
                                         </div>
                                         <div className="detail">
                                             <h4>г. Москва</h4>
@@ -39,7 +39,7 @@ export class Footer extends React.Component{
                                     </li>
                                     <li className="flex-row d-flex my-2">
                                         <div className="icon">
-                                            <FaPhoneSquare/>
+                                            <FaPhoneSquare color={'white'}/>
                                         </div>
                                         <div className="detail">
                                             <h4>+7 (903) 186 86 69</h4>
@@ -47,7 +47,7 @@ export class Footer extends React.Component{
                                     </li>
                                     <li className="flex-row d-flex my-2">
                                         <div className="icon">
-                                            <FaEnvelopeSquare/>
+                                            <FaEnvelopeSquare color={'white'}/>
                                         </div>
                                         <div className="detail">
                                             <h4>budu-ryadom@yandex.ru</h4>
@@ -55,10 +55,10 @@ export class Footer extends React.Component{
                                     </li>
                                     <li className="flex-row d-flex ">
                                         <div className="icon">
-                                            <FaInstagram/>
+                                            <FaInstagram color={'white'}/>
                                         </div>
                                         <div className="detail">
-                                            <h4>@charityfund_budu_ryadom</h4>
+                                            <Link to="https://www.instagram.com/charityfund_budu_ryadom/"><h4>@charityfund_budu_ryadom</h4></Link>
                                         </div>
                                     </li>
                                 </ul>

@@ -1,4 +1,5 @@
 import React from 'react';
+import {FaPaw} from "react-icons/fa";
 
 export class Help extends React.Component{
     render(){
@@ -6,127 +7,95 @@ export class Help extends React.Component{
             <section className="Volunteer-form-area section-gap">
                 <div className="container">
                     <div className="row d-flex justify-content-center">
-                        <div className="menu-content pb-60 col-lg-9">
+                        <img src={'img/common/mood2.jpeg'} height='280'/>
+                        <div className="menu-content pb-10 col-lg-6">
+                            <div className="title text-left">
+                                <h1>Как и чем можно помочь?</h1>
+                                <h5 className="text my-3"><FaPaw/> Стать волонтёром фонда</h5>
+                                <h5 className="text mb-3"><FaPaw/> Поддержать фонд финансово</h5>
+                                <h5 className="text mb-3"><FaPaw/> Привезти/передать/заказать через партнёров: <br />корм, лекарства, лакомства, игрушки, амуницию, когтеточки, когтерезы, фурминаторы, лежаки, наполнители, одноразовые пелёнки, материалы для ремонта</h5>
+                                <h5 className="text mb-3"><FaPaw/> Взять кого-то из подопечных фонда на передержку - подарить временный дом до появления постоянного</h5>
+                            </div>
+                        </div>
+                        <div className="menu-content pb-10 col-lg-11">
                             <div className="title text-center">
-                                <h1 className="mb-20">Want to help? Become a Volunteer</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                                <h3 className="text mt-4 mb-3">Сделать пожертвование</h3>
+                                <p style={{color:"black"}}>Все поступающие на содержание подопечных средства - это исключительно пожертвования неравнодушных людей. Никакой государственной поддержки у фонда нет. Как и нет спонсоров. Есть только мы с вами - те, кому не всё равно.
+                                </p>
+                                <p style={{color:"black"}}>
+                                    РЕКВИЗИТЫ:<br />
+                                    Наименование: ФОНД «БУДУ РЯДОМ»;<br />
+                                    ИНН/КПП: 5047204538/504701001;<br />
+                                    Счет (Р) – 40703810110050000171;<br />
+                                    Банк получателя – Ф ТОЧКА БАНК КИВИ БАНК (АО) Город Москва;<br />
+                                    Бик – 044525797; К/с – 30101810445250000797;
+                                </p>
+                                <h3 className="mt-4 mb-3">Стать волонтёром фонда</h3>
+                                <p style={{color:"black"}}>Фонду «Буду рядом» всегда очень нужны волонтёры – люди, которые на безвозмездной основе смогут помогать закрывать важные задачи, а именно:</p>
+                                <p>🚗 <b>автоволонтёры</b> – свозить животное к врачу, на фотосессию, выставку или другое публичные мероприятия с целью поиска дома. А также забрать с мероприятия и привезти благотворительную помощь: корма, подарки и т.д.;</p>
+                                <p>🤗 <b>сопровождающие</b> – сопровождать животное в дороге и на всех вышеперечисленных мероприятиях, при необходимости рассказывать про него заинтересовавшимся (конечно же, мы предварительно обеспечим вас всей необходимой информацией и будем на связи). Также часто нужна помощь руками представителю фонда во время мероприятий – иногда нам требуется ненадолго отойти, и не всегда это можно сделать с животным;</p>
+                                <p>📸 <b>фотографы</b> – не всегда есть возможность свозить животное в студию, а наличие красивых профессиональных фотографий в разы увеличивает шанс животного на домашнюю жизнь. Ничего, если вы только начинаете свой путь, наши модели с удовольствием станут частью вашего формирующегося портфолио;</p>
+                                <p>💬 <b>амбассадоры</b> – рассказывать на различных публичных мероприятиях о деятельности фонда и его подопечных, раздавать листовки. Всё расскажем, покажем, научим, листовки выдадим;</p>
+                                <p>🏡 <b>домашние передержки</b> – научить хвостов премудростям совместной жизни, бытовым навыкам и спокойному принятию особенностей городской среды: шумов машин, незнакомых людей и животных, мириады новых запахов.</p>
+                                <p>🐾 С нас: чуткое наставничество, готовность делиться опытом и знаниями, классное настроение и, конечно же, хвостатые антидепрессанты.</p>
                             </div>
                         </div>
                     </div>
                     <div className="row justify-content-center">
+                        <h3>Заполнить анкету волонтёра</h3>
                         <form className="col-lg-9">
                             <div className="form-group">
-                                <label htmlFor="first-name">First Name</label>
-                                <input type="text" className="form-control" placeholder="First Name"/>
+                                <label htmlFor="first-name">Имя</label>
+                                <input type="text" className="form-control" placeholder="Имя"/>
                             </div>
-                            <div className="form-group">
-                                <label htmlFor="last-name">Last Name</label>
-                                <input type="text" className="form-control" placeholder="Last Name"/>
+                            <div className="col-6 mb-30">
+                                <label htmlFor="email">Email</label>
+                                <input type="email" className="form-control" placeholder="Email"/>
                             </div>
-                            <div className="form-group">
-                                <label htmlFor="Address">Address</label>
-                                <input type="text" className="form-control mb-20" placeholder="Your Address"/>
-                                    <input type="text" className="form-control" placeholder=""/>
+                            <div className="col-6 mb-30">
+                                <label htmlFor="phone">Телефон</label>
+                                <input type="phone" className="form-control" placeholder="+7(___)___-__-__"/>
                             </div>
-                            <div className="form-row">
-                                <div className="col-6 mb-30">
-                                    <label htmlFor="City">City</label>
-                                    <div className="select-option" id="service-select">
-									<select>
-										<option data-display="Select City">Select City</option>
-										<option value="1">Dhaka</option>
-                                        <option value="2">Dinajpur</option>
-                                        <option value="3">Gazipur</option>
-                                        <option value="4">Bogra</option>
-                                        <option value="5">Feni</option>
-                                    </select>
-                                    </div>
-                                </div>
-                                <div className="col-6 mb-30">
-                                    <label htmlFor="state">State</label>
-                                    <div className="select-option" id="service-select">
-                                    <select>
-                                        <option data-display="Select State">Select State</option>
-                                        <option value="1">State One</option>
-                                        <option value="2">State Two</option>
-                                        <option value="3">State Three</option>
-                                        <option value="4">State Four</option>
-                                        <option value="5">State Five</option>
-                                    </select>
-                                    </div>
-                                </div>
-                                <div className="col-6 mb-30">
-                                    <label htmlFor="Country">Country</label>
-                                    <div className="select-option" id="service-select">
-                                        <select>
-                                            <option data-display="Select Country">Select Country</option>
-                                            <option value="1">Bangladesh</option>
-                                            <option value="2">London</option>
-                                            <option value="3">India</option>
-                                            <option value="4">Nepal</option>
-                                            <option value="5">Uganda</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div className="col-6 mb-30">
-                                    <label htmlFor="postal-code">Postal code</label>
-                                    <input type="text" className="form-control" placeholder="Postal Code"/>
-                                </div>
-                                <div className="col-6 mb-30">
-                                    <label htmlFor="email">Email Address</label>
-                                    <input type="email" className="form-control" placeholder="Email Address"/>
-                                </div>
-                                <div className="col-6 mb-30">
-                                    <label htmlFor="phone">Phone Number</label>
-                                    <input type="phone" className="form-control" placeholder="Phone Number"/>
-                                </div>
-                            </div>
-
                             <fieldset className="form-group">
-                                <label htmlFor="day">Which days you can be volunteer?</label>
+                                <label htmlFor="day">Какой вид помощи Вам ближе?</label>
                                 <div className="form-group ">
                                     <div className="form-check form-check-inline">
                                         <label className="form-check-label">
-                                            <input className="form-check-input" type="checkbox" name="inlinecheckbox" id="inlineRadio1" value="option1"/> Monday
+                                            <input className="form-check-input" type="checkbox" name="inlinecheckbox" id="inlineRadio1" value="option1"/> Автоволонтёр
                                         </label>
                                     </div>
                                     <div className="form-check form-check-inline">
                                         <label className="form-check-label">
-                                            <input className="form-check-input" type="checkbox" name="inlinecheckbox" id="inlineRadio2" value="option2"/> Tuesday
+                                            <input className="form-check-input" type="checkbox" name="inlinecheckbox" id="inlineRadio2" value="option2"/> Сопровождающий
                                         </label>
                                     </div>
                                     <div className="form-check form-check-inline">
                                         <label className="form-check-label">
-                                            <input className="form-check-input" type="checkbox" name="inlinecheckbox" id="inlineRadio3" value="option3"/> Wednesday
+                                            <input className="form-check-input" type="checkbox" name="inlinecheckbox" id="inlineRadio3" value="option3"/> Фотограф
                                         </label>
                                     </div>
                                     <div className="form-check form-check-inline">
                                         <label className="form-check-label">
-                                            <input className="form-check-input" type="checkbox" name="inlinecheckbox" id="inlineRadio2" value="option4"/> Thursday
+                                            <input className="form-check-input" type="checkbox" name="inlinecheckbox" id="inlineRadio2" value="option4"/> Амбассадор
                                         </label>
                                     </div>
                                     <div className="form-check form-check-inline">
                                         <label className="form-check-label">
-                                            <input className="form-check-input" type="checkbox" name="inlinecheckbox" id="inlineRadio2" value="option5"/> Friday
+                                            <input className="form-check-input" type="checkbox" name="inlinecheckbox" id="inlineRadio2" value="option5"/> Передержка
                                         </label>
                                     </div>
                                     <div className="form-check form-check-inline">
                                         <label className="form-check-label">
-                                            <input className="form-check-input" type="checkbox" name="inlinecheckbox" id="inlineRadio2" value="option6"/> Saturday
-                                        </label>
-                                    </div>
-                                    <div className="form-check form-check-inline">
-                                        <label className="form-check-label">
-                                            <input className="form-check-input" type="checkbox" name="inlinecheckbox" id="inlineRadio2" value="option6"/> Sunday
+                                            <input className="form-check-input" type="checkbox" name="inlinecheckbox" id="inlineRadio2" value="option6"/> Другое
                                         </label>
                                     </div>
                                 </div>
                             </fieldset>
                             <div className="form-group">
-                                <label htmlFor="note">Volunteer Note</label>
-                                <textarea className="form-control" id="exampleTextarea" rows="5" placeholder="Write message"></textarea>
+                                <label htmlFor="note">Комментарий</label>
+                                <textarea className="form-control" id="exampleTextarea" rows="5" placeholder="Введите сюда текст Вашего комментария"> </textarea>
                             </div>
-                            <button type="submit" className="primary-btn float-right">Send Request</button>
+                            <button type="submit" className="primary-btn float-right">Отправить</button>
                         </form>
                     </div>
                 </div>
