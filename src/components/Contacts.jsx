@@ -1,71 +1,79 @@
 import React from 'react';
+import { AiOutlineHome } from "react-icons/ai";
+import {BiEnvelope, FiPhone} from "react-icons/all";
+import {FaInstagram} from "react-icons/fa";
 
 export class Contacts extends React.Component{
     render(){
         return(
             <section className="contact-page-area section-gap">
-                <div className="container">
+                <div className="container mt-20">
                     <div className="row">
-                        <div className="map-wrap" style={{width:'100%', height: 445}} id="map"></div>
                         <div className="col-lg-4 d-flex flex-column address-wrap">
                             <div className="single-contact-address d-flex flex-row">
                                 <div className="icon">
-                                    <span className="lnr lnr-home"></span>
+                                    <AiOutlineHome size='40' color='#FAB700'/>&nbsp;&nbsp;&nbsp;&nbsp;
                                 </div>
-                                <div className="contact-details">
-                                    <h5>Binghamton, New York</h5>
-                                    <p>4343 Hinkle Deegan Lake Road</p>
-                                </div>
-                            </div>
-                            <div className="single-contact-address d-flex flex-row">
-                                <div className="icon">
-                                    <span className="lnr lnr-phone-handset"></span>
-                                </div>
-                                <div className="contact-details">
-                                    <h5>00 (953) 9865 562</h5>
-                                    <p>Mon to Fri 9am to 6 pm</p>
+                                <div className="contact-details mt-3">
+                                    <h5>г. Москва</h5>
                                 </div>
                             </div>
                             <div className="single-contact-address d-flex flex-row">
                                 <div className="icon">
-                                    <span className="lnr lnr-envelope"></span>
+                                    <FiPhone size='40' color='#FAB700'/>&nbsp;&nbsp;&nbsp;&nbsp;
                                 </div>
-                                <div className="contact-details">
-                                    <h5>support@colorlib.com</h5>
-                                    <p>Send us your query anytime!</p>
+                                <div className="contact-details mt-3">
+                                    <h5>+7 (903) 186 86 69</h5>
+                                </div>
+                            </div>
+                            <div className="single-contact-address d-flex flex-row">
+                                <div className="icon">
+                                    <BiEnvelope size='40' color='#FAB700'/>&nbsp;&nbsp;&nbsp;&nbsp;
+                                </div>
+                                <div className="contact-details mt-3">
+                                    <h5>budu-ryadom@yandex.ru</h5>
+                                </div>
+                            </div>
+                            <div className="single-contact-address d-flex flex-row">
+                                <div className="icon">
+                                    <FaInstagram size='40' color='#FAB700'/>&nbsp;&nbsp;&nbsp;&nbsp;
+                                </div>
+                                <div className="contact-details mt-3">
+                                    <h5>@charityfund_budu_ryadom</h5>
                                 </div>
                             </div>
                         </div>
                         <div className="col-lg-8">
+                            <h2 className='massage mb-4'>Отправить сообщение</h2>
                             <form className="form-area " id="myForm" action="mail.php" method="post"
                                   className="contact-form text-right">
                                 <div className="row">
                                     <div className="col-lg-6 form-group">
-                                        <input name="name" placeholder="Enter your name" onFocus="this.placeholder = ''"
-                                               onBlur="this.placeholder = 'Enter your name'"
+                                        <input name="name" placeholder="Введите имя" onFocus="this.placeholder = ''"
+                                               onBlur="this.placeholder = 'Введите имя'"
                                                className="common-input mb-20 form-control" required="" type="text"/>
 
-                                        <input name="email" placeholder="Enter email address"
+                                        <input name="email" placeholder="Email"
                                                pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
                                                onFocus="this.placeholder = ''"
-                                               onBlur="this.placeholder = 'Enter email address'"
+                                               onBlur="this.placeholder = 'Email'"
                                                className="common-input mb-20 form-control" required="" type="email"/>
 
-                                        <input name="subject" placeholder="Enter your subject"
+                                        <input name="subject" placeholder="Тема"
                                                onFocus="this.placeholder = ''"
-                                               onBlur="this.placeholder = 'Enter your subject'"
+                                               onBlur="this.placeholder = 'Тема'"
                                                className="common-input mb-20 form-control" required=""
                                                type="text"/>
                                     </div>
                                     <div className="col-lg-6 form-group">
-                                        <textarea className="common-textarea form-control" name="message"
-                                                  placeholder="Messege" onFocus="this.placeholder = ''"
-                                                  onBlur="this.placeholder = 'Messege'" required=""></textarea>
+                                        <textarea className="common-textarea form-control" rows='6' name="message"
+                                                  placeholder="Сообщение" onFocus="this.placeholder = ''"
+                                                  onBlur="this.placeholder = 'Сообщение'" required=""/>
                                     </div>
                                     <div className="col-lg-12 d-flex justify-content-between">
-                                        <div className="alert-msg" style={{textAlign: "left"}}></div>
+                                        <div className="alert-msg" style={{textAlign: "left"}}> </div>
                                         <button className="genric-btn primary circle" style={{float: "right"}}>
-                                            Send Message
+                                            Отправить сообщение
                                         </button>
                                     </div>
                                 </div>
