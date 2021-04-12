@@ -2130,7 +2130,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #mobile-nav-toggle i {
-  color: #fff;
+  color: #FAB700;
   font-weight: 900;
 }
 
@@ -2263,9 +2263,9 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .primary-btn {
   background-color: #fab700;
-  line-height: 42px;
-  padding-left: 30px;
-  padding-right: 30px;
+  line-height: 40px;
+  padding-left: 25px;
+  padding-right: 25px;
   border: 1px solid transparent;
   color: #fff;
   display: inline-block;
@@ -2328,7 +2328,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .banner-area {
-  background: url(../img/banner-bg.jpg) center;
+  background: url(../img/common/mainbanner.png) center;
   background-size: cover;
 }
 

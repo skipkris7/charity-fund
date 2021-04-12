@@ -16,8 +16,8 @@ import {Header} from "./components/Header";
 import {MainBanner} from "./components/MainBanner";
 import {OnePost} from "./components/OnePost";
 import {Admin} from "./admin/Admin";
-import {Route,BrowserRouter} from "react-router-dom";
-
+import {Route, BrowserRouter} from "react-router-dom";
+import {Partners} from "./components/Partners";
 
 function App() {
   return (
@@ -37,6 +37,7 @@ function App() {
               <Route path="/articles" render={()=><Articles/>}/>
               <Route path="/post" render={()=><OnePost/>}/>
               <Route path="/contacts" render={()=><Contacts/>}/>
+              <Route path="/partners" render={()=><Partners/>}/>
               <Route path="/admin" render={()=><Admin/>}/>
               <Footer/>
           </BrowserRouter>

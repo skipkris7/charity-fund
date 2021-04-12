@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link, NavLink} from "react-router-dom";
+import logo from './img/fund-logo/logo3.png';
 
 
 export class Menu extends React.Component{
@@ -9,12 +10,12 @@ export class Menu extends React.Component{
                 <div className="container main-menu">
                     <div className="row align-items-center justify-content-between d-flex">
                         <div id="logo">
-                            <Link to="/"><img className='logo' src={'img/fund-logo/logo1.png'} alt='logo'/></Link>
+                            <Link to="/"><img className='logo' src={logo} alt='logo'/></Link>
                         </div>
                         <nav id="nav-menu-container">
                             <ul className="nav-menu">
                                 <li className="menu-active">
-                                    <NavLink className="nav-link" to="/">
+                                    <NavLink className="nav-link active" aria-current="page" to="/">
                                         <h6 className="text">Главная</h6>
                                     </NavLink>
                                 </li>

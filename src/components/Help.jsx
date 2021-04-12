@@ -1,5 +1,6 @@
 import React from 'react';
 import {FaPaw} from "react-icons/fa";
+import {Link} from "react-router-dom";
 
 export class Help extends React.Component{
     render(){
@@ -7,13 +8,13 @@ export class Help extends React.Component{
             <section className="Volunteer-form-area section-gap">
                 <div className="container">
                     <div className="row d-flex justify-content-center">
-                        <img src={'img/common/mood2.jpeg'} height='280'/>
+                        <img src={'img/common/mood5.jpeg'} height='280'/>
                         <div className="menu-content pb-10 col-lg-6">
                             <div className="title text-left">
                                 <h1>Как и чем можно помочь?</h1>
                                 <h5 className="text my-3"><FaPaw/> Стать волонтёром фонда</h5>
                                 <h5 className="text mb-3"><FaPaw/> Поддержать фонд финансово</h5>
-                                <h5 className="text mb-3"><FaPaw/> Привезти/передать/заказать через партнёров: <br />корм, лекарства, лакомства, игрушки, амуницию, когтеточки, когтерезы, фурминаторы, лежаки, наполнители, одноразовые пелёнки, материалы для ремонта</h5>
+                                <h5 className="text mb-3"><FaPaw/> Привезти/передать/заказать через <Link to="/partners">партнёров</Link>: <br />корм, лекарства, лакомства, игрушки, амуницию, когтеточки, когтерезы, фурминаторы, лежаки, наполнители, одноразовые пелёнки, материалы для ремонта</h5>
                                 <h5 className="text mb-3"><FaPaw/> Взять кого-то из подопечных фонда на передержку - подарить временный дом до появления постоянного</h5>
                             </div>
                         </div>
