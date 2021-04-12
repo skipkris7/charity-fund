@@ -1,73 +1,86 @@
 import React from 'react';
+import {Link, NavLink} from 'react-router-dom';
+
 
 export class Cats extends React.Component {
-    render() {
+    render(){
         return (
             <section className="cat-list-area section-gap">
                 <div className="container">
+                    <div className="text-center">
+                        <h1>Сегодня <br /> </h1>
+                        <h2>в Благотворительном фонде "Буду Рядом" живут:</h2>
+                        <br />
+                    </div>
                     <div className="row">
                         <div className="col-lg-3 col-md-6">
                             <div className="single-cat-list">
-                                <img src="img/ct1.jpg" alt="" className="img-fluid"/>
-                                    <div className="overlay">
-                                        <div className="text">1</div>
-                                    </div>
+                                <img src="img/cats/bond&jinks/Bond&Jinks6.jpg" alt="" className="img-fluid"/>
+                                <div className="overlay">
+                                    <Link to="/onecat" className="primary-btn text-uppercase mb-5">выбрать</Link>
+                                    <div className="text">Бонд и Джинкс</div>
+                                </div>
                             </div>
                         </div>
                         <div className="col-lg-3 col-md-6">
                             <div className="single-cat-list">
-                                <img src="img/ct2.jpg" alt="" className="img-fluid"/>
-                                    <div className="overlay">
-                                        <div className="text">2</div>
-                                    </div>
+                                <img src="img/cats/villi/villi1.jpeg" alt="" className="img-fluid"/>
+                                <div className="overlay">
+                                    <Link to="/onecat" className="primary-btn text-uppercase mb-5">выбрать</Link>
+                                    <div className="text">Вилли</div>
+                                </div>
                             </div>
                         </div>
                         <div className="col-lg-3 col-md-6">
                             <div className="single-cat-list">
-                                <img src="img/ct3.jpg" alt="" className="img-fluid"/>
-                                    <div className="overlay">
-                                        <div className="text">3</div>
-                                    </div>
+                                <img src="img/cats/dayday/DSC_0738.jpg" alt="" className="img-fluid"/>
+                                <div className="overlay">
+                                    <Link to="/onecat" className="primary-btn text-uppercase mb-5">выбрать</Link>
+                                    <div className="text">ДайДай</div>
+                                </div>
                             </div>
                         </div>
                         <div className="col-lg-3 col-md-6">
                             <div className="single-cat-list">
-                                <img src="img/ct4.jpg" alt="" className="img-fluid"/>
-                                    <div className="overlay">
-                                        <div className="text">4</div>
-                                    </div>
+                                <img src="img/cats/monya/monya18.jpeg" alt="" className="img-fluid"/>
+                                <div className="overlay">
+                                    <Link to="/onecat" className="primary-btn text-uppercase mb-5">выбрать</Link>
+                                    <div className="text">Моня</div>
+                                </div>
                             </div>
                         </div>
                         <div className="col-lg-3 col-md-6">
                             <div className="single-cat-list">
-                                <img src="img/ct5.jpg" alt="" className="img-fluid"/>
-                                    <div className="overlay">
-                                        <div className="text">5</div>
-                                    </div>
+                                <img src="img/cats/mushka/mushka4.jpeg" alt="" className="img-fluid"/>
+                                <div className="overlay">
+                                    <Link to="/onecat" className="primary-btn text-uppercase mb-5">выбрать</Link>
+                                    <div className="text">Мушка</div>
+                                </div>
                             </div>
                         </div>
                         <div className="col-lg-3 col-md-6">
                             <div className="single-cat-list">
-                                <img src="img/ct6.jpg" alt="" className="img-fluid"/>
-                                    <div className="overlay">
-                                        <div className="text">6</div>
-                                    </div>
+                                <img src="img/cats/chivas/chivas2.jpeg" alt="" className="img-fluid"/>
+                                <div className="overlay">
+                                    <Link to="/onecat" className="primary-btn text-uppercase mb-5">выбрать</Link>
+                                    <div className="text">Чивас</div>
+                                </div>
                             </div>
                         </div>
                         <div className="col-lg-3 col-md-6">
                             <div className="single-cat-list">
-                                <img src="img/ct7.jpg" alt="" className="img-fluid"/>
-                                    <div className="overlay">
-                                        <div className="text">7</div>
-                                    </div>
+                                <img src="img/fund-logo/logo1.png" alt="" className="img-fluid"/>
+                                <div className="overlay">
+                                    <div className="text">...</div>
+                                </div>
                             </div>
                         </div>
                         <div className="col-lg-3 col-md-6">
                             <div className="single-cat-list">
-                                <img src="img/ct8.jpg" alt="" className="img-fluid"/>
-                                    <div className="overlay">
-                                        <div className="text">8</div>
-                                    </div>
+                                <img src="img/fund-logo/logo1.png" alt="" className="img-fluid"/>
+                                <div className="overlay">
+                                    <div className="text">...</div>
+                                </div>
                             </div>
                         </div>
                     </div>
