@@ -9,13 +9,13 @@ export class Cats extends React.Component {
                 <div className="container">
                     <div className="text-center">
                         <h1>Сегодня <br /> </h1>
-                        <h2>в Благотворительном фонде "Буду Рядом" живут:</h2>
+                        <h2>в Благотворительном фонде "Буду Рядом" ждут хозяина:</h2>
                         <br />
                     </div>
                     <div className="row">
                         <div className="col-lg-3 col-md-6">
                             <div className="single-cat-list">
-                                <img src="img/cats/bond&jinks/Bond&Jinks6.jpg" alt="" className="img-fluid"/>
+                                <img src="img/cats/bond&jinks/Bond&Jinks6.jpg" style={{height: 280}} alt="" className="img-fluid"/>
                                 <div className="overlay">
                                     <Link to="/onecat" className="primary-btn text-uppercase mb-5">выбрать</Link>
                                     <div className="text">Бонд и Джинкс</div>
@@ -24,7 +24,7 @@ export class Cats extends React.Component {
                         </div>
                         <div className="col-lg-3 col-md-6">
                             <div className="single-cat-list">
-                                <img src="img/cats/villi/villi1.jpeg" alt="" className="img-fluid"/>
+                                <img src="img/cats/villi/villi1.jpeg" style={{height: 280}} alt="" className="img-fluid"/>
                                 <div className="overlay">
                                     <Link to="/onecat" className="primary-btn text-uppercase mb-5">выбрать</Link>
                                     <div className="text">Вилли</div>
@@ -33,7 +33,7 @@ export class Cats extends React.Component {
                         </div>
                         <div className="col-lg-3 col-md-6">
                             <div className="single-cat-list">
-                                <img src="img/cats/dayday/DSC_0738.jpg" alt="" className="img-fluid"/>
+                                <img src="img/cats/dayday/DSC_0738.jpg" style={{height: 280}} alt="" className="img-fluid"/>
                                 <div className="overlay">
                                     <Link to="/onecat" className="primary-btn text-uppercase mb-5">выбрать</Link>
                                     <div className="text">ДайДай</div>
@@ -42,7 +42,7 @@ export class Cats extends React.Component {
                         </div>
                         <div className="col-lg-3 col-md-6">
                             <div className="single-cat-list">
-                                <img src="img/cats/monya/monya18.jpeg" alt="" className="img-fluid"/>
+                                <img src="img/cats/monya/monya18.jpeg" style={{height: 280}} alt="" className="img-fluid"/>
                                 <div className="overlay">
                                     <Link to="/onecat" className="primary-btn text-uppercase mb-5">выбрать</Link>
                                     <div className="text">Моня</div>
@@ -51,7 +51,7 @@ export class Cats extends React.Component {
                         </div>
                         <div className="col-lg-3 col-md-6">
                             <div className="single-cat-list">
-                                <img src="img/cats/mushka/mushka4.jpeg" alt="" className="img-fluid"/>
+                                <img src="img/cats/mushka/mushka4.jpeg" style={{height: 280}} alt="" className="img-fluid"/>
                                 <div className="overlay">
                                     <Link to="/onecat" className="primary-btn text-uppercase mb-5">выбрать</Link>
                                     <div className="text">Мушка</div>
@@ -60,7 +60,7 @@ export class Cats extends React.Component {
                         </div>
                         <div className="col-lg-3 col-md-6">
                             <div className="single-cat-list">
-                                <img src="img/cats/chivas/chivas2.jpeg" alt="" className="img-fluid"/>
+                                <img src="img/cats/chivas/chivas2.jpeg" style={{height: 280}} alt="" className="img-fluid"/>
                                 <div className="overlay">
                                     <Link to="/onecat" className="primary-btn text-uppercase mb-5">выбрать</Link>
                                     <div className="text">Чивас</div>
@@ -69,7 +69,7 @@ export class Cats extends React.Component {
                         </div>
                         <div className="col-lg-3 col-md-6">
                             <div className="single-cat-list">
-                                <img src="img/fund-logo/logo1.png" alt="" className="img-fluid"/>
+                                <img src="img/fund-logo/logo1.png" style={{height: 100}} alt="" className="img-fluid"/>
                                 <div className="overlay">
                                     <div className="text">...</div>
                                 </div>
@@ -77,7 +77,7 @@ export class Cats extends React.Component {
                         </div>
                         <div className="col-lg-3 col-md-6">
                             <div className="single-cat-list">
-                                <img src="img/fund-logo/logo1.png" alt="" className="img-fluid"/>
+                                <img src="img/fund-logo/logo1.png" style={{height: 100}} alt="" className="img-fluid"/>
                                 <div className="overlay">
                                     <div className="text">...</div>
                                 </div>
