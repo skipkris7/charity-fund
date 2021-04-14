@@ -23,6 +23,8 @@ import {Partners} from "./components/Partners";
 class App extends React.Component{
     constructor(props) {
         super(props);
+        this.state = {
+        }
 
     }
     render() {
@@ -44,7 +46,7 @@ class App extends React.Component{
               <Route path="/post" render={()=><OnePost/>}/>
               <Route path="/contacts" render={()=><Contacts/>}/>
               <Route path="/partners" render={()=><Partners/>}/>
-              <Route path="/admin/:page" render={(props)=><Admin {...props} />}/>
+              <Route path="/admin/:page" render={(props)=><Admin {...props}/>}/>
               <Footer/>
           </BrowserRouter>
       </div>

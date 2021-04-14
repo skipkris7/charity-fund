@@ -2,6 +2,7 @@ import React from 'react';
 import {AdminMenu} from './AdminMenu'
 import {Route, Switch} from "react-router-dom";
 import {AddPost} from "./AddPost";
+import {AddCat} from "./AddCat";
 
 
 export class Admin extends React.Component{
@@ -18,18 +19,18 @@ export class Admin extends React.Component{
     render() {
         return(
             <section className="Volunteer-form-area section-gap">
-                    <AdminMenu/>
-                    <switch>
-                        <Route path="/admin/addCat">
-                            "Добавить кошку"
-                        </Route>
-                        <Route path="/admin/addDog">
-                            "Добавить собаку"
-                        </Route>
-                        <Route path="/admin/addPost">
-                            <AddPost changeH1={this.props}/>
-                        </Route>
-                    </switch>
+                <AdminMenu/>
+                <switch>
+                    <Route path="/admin/addCat">
+                        <AddCat page={this.props}/>
+                    </Route>
+                    <Route path="/admin/addDog">
+                        "Добавить собаку"
+                    </Route>
+                    <Route path="/admin/addPost">
+                        <AddPost page={this.props}/>
+                    </Route>
+                </switch>
             </section>
 
     )}
