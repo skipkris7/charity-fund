@@ -17,7 +17,7 @@ export class MainBanner extends React.Component{
     render(){
         return(
             <section className="image-carusel-area">
-                <div className="container mt-40">
+                <div className="container mt-35">
                     <div className="row">
                         <div className="active-image-carusel">
                             <div className="single-image-carusel">
