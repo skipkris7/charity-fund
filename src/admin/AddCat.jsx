@@ -28,16 +28,12 @@ export class AddCat extends React.Component{
         const formData = new FormData();
         formData.append('nickname',this.state.nickname);
         formData.append('text',this.state.text);
-        fetch('http://psnov555.beget.tech/addCat',{
+        fetch('http://localhost/php/addCat',{
             method: "POST",
             body: formData
         })
             .then(response=>response.json())
-            .then(result=>{
-                if(result.result === "success"){
-                    alert("Кошка добавлена");
-                }
-            })
+            .then(result=>console.log(result));
     }
     render() {
         return(

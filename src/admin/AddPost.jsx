@@ -16,7 +16,7 @@ export class AddPost extends React.Component{
         this.handlerSubmit= this.handlerSubmit.bind(this);
     }
     componentDidMount() {
-        this.props("Добавление статьи");// надо добавить в пропс звено
+
     }
     handlerInput(event){
         const name = event.target.name;
@@ -32,7 +32,7 @@ export class AddPost extends React.Component{
         formData.append("title",this.state.title);
         formData.append("text",this.state.text);
         formData.append("author",this.state.author);
-        fetch("http://psnov555_fond/addPost",{
+        fetch("http://psnov555.beget.tech/addPost",{
             method: "POST",
             body: formData
         }).then(response=>response.json())

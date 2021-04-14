@@ -9,11 +9,10 @@ export class Admin extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            page: "",
+            page: ""
         }
     }
     componentDidMount() {
-
     }
 
     render() {
@@ -21,14 +20,14 @@ export class Admin extends React.Component{
             <section className="Volunteer-form-area section-gap">
                 <AdminMenu/>
                 <Switch>
-                    <Route path="/admin/AddCat">
+                    <Route path="/admin/addCat">
                         <AddCat/>
                     </Route>
-                    <Route path="/admin/AddDog">
+                    <Route path="/admin/addDog">
                         "Добавить собаку"
                     </Route>
-                    <Route path="/admin/AddPost">
-                        <AddPost page={this.props}/>
+                    <Route path="/admin/addPost">
+                        <AddPost/>
                     </Route>
                 </Switch>
             </section>
