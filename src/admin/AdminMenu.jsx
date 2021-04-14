@@ -10,11 +10,10 @@ export class AdminMenu extends React.Component {
         return (
             <div className="container">
                 <nav className="nav flex-column">
-                    <h1>{this.props.h1}</h1>
                     <h5>
-                        <NavLink className="nav-link" to="admin/addCat">Добавить кошку</NavLink>
-                        <NavLink className="nav-link" to="admin/addDog">Добавить собаку</NavLink>
-                        <NavLink className="nav-link" to="admin/addPost">Добавить статью</NavLink>
+                        <NavLink className="nav-link" to="admin/AddCat">Добавить кошку</NavLink>
+                        <NavLink className="nav-link" to="admin/AddDog">Добавить собаку</NavLink>
+                        <NavLink className="nav-link" to="admin/AddPost">Добавить статью</NavLink>
                     </h5>
                 </nav>
             </div>
