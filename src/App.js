@@ -19,8 +19,14 @@ import {Admin} from "./admin/Admin";
 import {Route, BrowserRouter} from "react-router-dom";
 import {Partners} from "./components/Partners";
 
-function App() {
-  return (
+
+class App extends React.Component{
+    constructor(props) {
+        super(props);
+
+    }
+    render() {
+    return (
       <div>
           <BrowserRouter>
               <Menu/>
@@ -38,11 +44,13 @@ function App() {
               <Route path="/post" render={()=><OnePost/>}/>
               <Route path="/contacts" render={()=><Contacts/>}/>
               <Route path="/partners" render={()=><Partners/>}/>
-              <Route path="/admin" render={()=><Admin/>}/>
+              <Route path="/admin/:page" render={(props)=><Admin {...props} />}/>
               <Footer/>
           </BrowserRouter>
       </div>
-  )
+    )
+  }
 }
+
 
 export default App;
