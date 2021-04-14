@@ -16,7 +16,7 @@ export class AddPost extends React.Component{
         this.handlerSubmit= this.handlerSubmit.bind(this);
     }
     componentDidMount() {
-        this.props("Добавление статьи");// надо добавить в пропс
+        this.props("Добавление статьи");// надо добавить в пропс звено
     }
     handlerInput(event){
         const name = event.target.name;
