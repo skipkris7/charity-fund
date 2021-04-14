@@ -55,7 +55,7 @@ export class Help extends React.Component{
                             </div>
                             <div className="col-6 mb-30">
                                 <label htmlFor="phone">Телефон</label>
-                                <input type="phone" className="form-control" placeholder="+7(___)___-__-__"/>
+                                <input type="tel" className="form-control" placeholder="+7(___)___-__-__"/>
                             </div>
                             <fieldset className="form-group">
                                 <label htmlFor="day">Какой вид помощи Вам ближе?</label>

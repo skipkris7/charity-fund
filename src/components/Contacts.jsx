@@ -4,6 +4,41 @@ import {BiEnvelope, FiPhone} from "react-icons/all";
 import {FaInstagram} from "react-icons/fa";
 
 export class Contacts extends React.Component{
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: "",
+            tel: "",
+            title: "",
+            text: ""
+        }
+        this.handlerInput = this.handlerInput.bind(this);
+        this.handlerSubmit = this.handlerSubmit.bind(this);
+    }
+
+    handlerInput(event){
+        const name = event.target.name;
+        const value = event.target.value;
+        this.setState({
+            [name]: value
+        })
+    }
+
+    handlerSubmit(event){
+        event.preventDefault();
+        const formData = new FormData();
+        formData.append("name", this.state.name);
+        formData.append("tel", this.state.tel);
+        formData.append("title", this.state.title);
+        formData.append("text", this.state.text);
+        fetch("http://skipkris7.beget.tech/fund/php/handlerMail.php",{
+            method: "POST",
+            body: formData
+        }).then(response=>response.json())
+            .then(result=>console.log(result));
+    }
+
     render(){
         return(
             <section className="contact-page-area section-gap">
@@ -44,31 +79,16 @@ export class Contacts extends React.Component{
                             </div>
                         </div>
                         <div className="col-lg-8">
-                            <h2 className='massage mb-4'>Отправить сообщение</h2>
-                            <form className="form-area " id="myForm" action="mail.php" method="post"
-                                  className="contact-form text-right">
+                            <h2 className='massage mb-3'>Отправить сообщение</h2>
+                            <form onSubmit={this.handlerSubmit} className="form-area" id="myForm" action="" method="post">
                                 <div className="row">
                                     <div className="col-lg-6 form-group">
-                                        <input name="name" placeholder="Введите имя" onFocus="this.placeholder = ''"
-                                               onBlur="this.placeholder = 'Введите имя'"
-                                               className="common-input mb-20 form-control" required="" type="text"/>
-
-                                        <input name="email" placeholder="Email"
-                                               pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
-                                               onFocus="this.placeholder = ''"
-                                               onBlur="this.placeholder = 'Email'"
-                                               className="common-input mb-20 form-control" required="" type="email"/>
-
-                                        <input name="subject" placeholder="Тема"
-                                               onFocus="this.placeholder = ''"
-                                               onBlur="this.placeholder = 'Тема'"
-                                               className="common-input mb-20 form-control" required=""
-                                               type="text"/>
+                                        <input value={this.state.name} onChange={this.handlerInput} name="name" type="text" placeholder="Введите имя" className="form-control mb-3 font-weight-bold" />
+                                        <input value={this.state.tel} onChange={this.handlerInput} name="tel" type="tel" placeholder="+7(___)___-__-__" className="form-control mb-3 font-weight-bold" />
+                                        <input value={this.state.title} onChange={this.handlerInput} name="title" type="text" placeholder="Тема" className="form-control mb-3 font-weight-bold" />
                                     </div>
                                     <div className="col-lg-6 form-group">
-                                        <textarea className="common-textarea form-control" rows='6' name="message"
-                                                  placeholder="Сообщение" onFocus="this.placeholder = ''"
-                                                  onBlur="this.placeholder = 'Сообщение'" required=""/>
+                                        <textarea value={this.state.text} onChange={this.handlerInput} name="text" className="common-textarea form-control" placeholder="Сообщение"/>
                                     </div>
                                     <div className="col-lg-12 d-flex justify-content-between">
                                         <div className="alert-msg" style={{textAlign: "left"}}> </div>
