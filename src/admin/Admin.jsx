@@ -3,7 +3,7 @@ import {AdminMenu} from './AdminMenu'
 import {Route, Switch} from "react-router-dom";
 import {AddPost} from "./AddPost";
 import {AddCat} from "./AddCat";
-
+import {AddDog} from "./AddDog";
 
 export class Admin extends React.Component{
     constructor(props) {
@@ -24,7 +24,7 @@ export class Admin extends React.Component{
                         <AddCat/>
                     </Route>
                     <Route path="/admin/addDog">
-                        "Добавить собаку"
+                        <AddDog/>
                     </Route>
                     <Route path="/admin/addPost">
                         <AddPost/>

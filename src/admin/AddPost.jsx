@@ -32,7 +32,7 @@ export class AddPost extends React.Component{
         formData.append("title",this.state.title);
         formData.append("text",this.state.text);
         formData.append("author",this.state.author);
-        fetch("http://localhost//addPost",{
+        fetch("http://localhost/addPost",{
             method: "POST",
             body: formData
         }).then(response=>response.json())
@@ -41,7 +41,7 @@ export class AddPost extends React.Component{
     render() {
         return(
             <div className="container">
-                <div className="col-sm-9 mx-auto">
+                <div className="col-sm-10 mx-auto">
                     <form onSubmit={this.handlerSubmit}>
                         <div className="mb-3">
                             <input value={this.state.title} onChange={this.handlerInput} name="title" type="text" placeholder="Заголовок" className="form-control"/>

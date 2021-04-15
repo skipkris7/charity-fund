@@ -38,7 +38,7 @@ export class AddCat extends React.Component{
     render() {
         return(
             <div className="container">
-                <div className="col-sm-9 mx-auto">
+                <div className="col-sm-10 mx-auto">
                     <form onSubmit={this.handlerSubmit}>
                         <div className="mb-3">
                             <input value={this.state.nickname} onChange={this.handlerInputChange} name="nickname" type="text" placeholder="Кличка" className="form-control"/>
