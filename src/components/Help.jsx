@@ -1,14 +1,61 @@
 import React from 'react';
 import {FaPaw} from "react-icons/fa";
 import {Link} from "react-router-dom";
+import mood5 from "./img/mood5.jpeg";
 
 export class Help extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: "",
+            email: "",
+            tel: "",
+            car: "",
+            attendant: "",
+            photo: "",
+            ambassador: "",
+            foster: "",
+            other: "",
+            comment: ""
+        }
+        this.handlerInput = this.handlerInput.bind(this);
+        this.handlerSubmit = this.handlerSubmit.bind(this);
+    }
+
+    handlerInput(event){
+        const name = event.target.name;
+        const value = event.target.value;
+        this.setState({
+            [name]: value
+        })
+    }
+
+    handlerSubmit(event){
+        event.preventDefault();
+        const formData = new FormData();
+        formData.append("name", this.state.name);
+        formData.append("email", this.state.email);
+        formData.append("tel", this.state.tel);
+        formData.append("car", this.state.car);
+        formData.append("attendant", this.state.attendant);
+        formData.append("photo", this.state.photo);
+        formData.append("ambassador", this.state.ambassador);
+        formData.append("foster", this.state.foster);
+        formData.append("other", this.state.other);
+        formData.append("comment", this.state.comment);
+        fetch("http://skipkris7.beget.tech/fund/php/handlerVolunteer.php",{
+            method: "POST",
+            body: formData
+        }).then(response=>response.json())
+            .then(result=>console.log(result));
+    }
+
     render(){
         return(
             <section className="Volunteer-form-area section-gap">
                 <div className="container">
                     <div className="row d-flex justify-content-center">
-                        <img src={'img/common/mood5.jpeg'} height='280'/>
+                        <img src={mood5} height='280' alt="mood"/>
                         <div className="menu-content pb-10 col-lg-6">
                             <div className="title text-left">
                                 <h1>Как и чем можно помочь?</h1>
@@ -44,57 +91,57 @@ export class Help extends React.Component{
                     </div>
                     <div className="row justify-content-center">
                         <h3>Заполнить анкету волонтёра</h3>
-                        <form className="col-lg-9">
+                        <form onSubmit={this.handlerSubmit} className="col-lg-9">
                             <div className="form-group">
                                 <label htmlFor="first-name">Имя</label>
-                                <input type="text" className="form-control" placeholder="Имя"/>
+                                <input value={this.state.name} onChange={this.handlerInput} name="name" type="text" className="form-control" placeholder="Имя"/>
                             </div>
                             <div className="col-6 mb-30">
                                 <label htmlFor="email">Email</label>
-                                <input type="email" className="form-control" placeholder="Email"/>
+                                <input value={this.state.email} onChange={this.handlerInput} name="email" type="email" className="form-control" placeholder="Email"/>
                             </div>
                             <div className="col-6 mb-30">
                                 <label htmlFor="phone">Телефон</label>
-                                <input type="tel" className="form-control" placeholder="+7(___)___-__-__"/>
+                                <input value={this.state.tel} onChange={this.handlerInput} name="tel" type="tel" className="form-control" placeholder="+7(___)___-__-__"/>
                             </div>
                             <fieldset className="form-group">
                                 <label htmlFor="day">Какой вид помощи Вам ближе?</label>
                                 <div className="form-group ">
                                     <div className="form-check form-check-inline">
                                         <label className="form-check-label">
-                                            <input className="form-check-input" type="checkbox" name="inlinecheckbox" id="inlineRadio1" value="option1"/> Автоволонтёр
+                                            <input value={this.state.car} onChange={this.handlerInput} name="car" className="form-check-input" type="checkbox" id="inlineRadio1" checked /> Автоволонтёр
                                         </label>
                                     </div>
                                     <div className="form-check form-check-inline">
                                         <label className="form-check-label">
-                                            <input className="form-check-input" type="checkbox" name="inlinecheckbox" id="inlineRadio2" value="option2"/> Сопровождающий
+                                            <input value={this.state.attendant} onChange={this.handlerInput} name="attendant" className="form-check-input" type="checkbox" id="inlineRadio2" checked /> Сопровождающий
                                         </label>
                                     </div>
                                     <div className="form-check form-check-inline">
                                         <label className="form-check-label">
-                                            <input className="form-check-input" type="checkbox" name="inlinecheckbox" id="inlineRadio3" value="option3"/> Фотограф
+                                            <input value={this.state.photo} onChange={this.handlerInput} name="photo" className="form-check-input" type="checkbox" id="inlineRadio3" checked /> Фотограф
                                         </label>
                                     </div>
                                     <div className="form-check form-check-inline">
                                         <label className="form-check-label">
-                                            <input className="form-check-input" type="checkbox" name="inlinecheckbox" id="inlineRadio2" value="option4"/> Амбассадор
+                                            <input value={this.state.ambassador} onChange={this.handlerInput} name="ambassador" className="form-check-input" type="checkbox" id="inlineRadio2" checked /> Амбассадор
                                         </label>
                                     </div>
                                     <div className="form-check form-check-inline">
                                         <label className="form-check-label">
-                                            <input className="form-check-input" type="checkbox" name="inlinecheckbox" id="inlineRadio2" value="option5"/> Передержка
+                                            <input value={this.state.foster} onChange={this.handlerInput} name="foster" className="form-check-input" type="checkbox" id="inlineRadio2" checked /> Передержка
                                         </label>
                                     </div>
                                     <div className="form-check form-check-inline">
                                         <label className="form-check-label">
-                                            <input className="form-check-input" type="checkbox" name="inlinecheckbox" id="inlineRadio2" value="option6"/> Другое
+                                            <input value={this.state.other} onChange={this.handlerInput} name="other" className="form-check-input" type="checkbox" id="inlineRadio2" checked /> Другое
                                         </label>
                                     </div>
                                 </div>
                             </fieldset>
                             <div className="form-group">
                                 <label htmlFor="note">Комментарий</label>
-                                <textarea className="form-control" id="exampleTextarea" rows="5" placeholder="Введите сюда текст Вашего комментария"> </textarea>
+                                <textarea value={this.state.comment} onChange={this.handlerInput} name="comment" className="form-control" id="exampleTextarea" rows="5" placeholder="Введите сюда текст Вашего комментария"> </textarea>
                             </div>
                             <button type="submit" className="primary-btn float-right">Отправить</button>
                         </form>
