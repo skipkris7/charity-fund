@@ -1,10 +1,13 @@
-import React from 'react';
+import React from "react";
 import {NavLink} from "react-router-dom";
 
 
 export class AdminMenu extends React.Component{
     constructor(props) {
         super(props);
+        this.state = {
+        }
+
     }
     render() {
         return (

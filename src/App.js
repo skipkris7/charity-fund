@@ -46,7 +46,7 @@ class App extends React.Component{
               <Route path="/post" render={()=><OnePost/>}/>
               <Route path="/contacts" render={()=><Contacts/>}/>
               <Route path="/partners" render={()=><Partners/>}/>
-              <Route path="/admin/:page" render={(props)=><Admin {...props}/>}/>
+              <Route exact path="/admin/:page" render={(props)=><Admin {...props}/>}/>
               <Footer/>
           </BrowserRouter>
       </div>

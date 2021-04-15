@@ -28,7 +28,7 @@ export class AddCat extends React.Component{
         const formData = new FormData();
         formData.append('nickname',this.state.nickname);
         formData.append('text',this.state.text);
-        fetch('http://localhost/php/addCat',{
+        fetch('http://localhost/addCat',{
             method: "POST",
             body: formData
         })
