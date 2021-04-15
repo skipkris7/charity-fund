@@ -16,7 +16,7 @@ export class OneDog extends React.Component {
     componentDidMount() {
         console.log("Компонет Post отрисован");
         const formData = new FormData();
-        formData.append('id',this.props.match.params.id);
+        formData.append('id',this.state.id);
         fetch("http://v90355zw.beget.tech/php12/getDog.php", {
             method: 'POST',
             body: formData

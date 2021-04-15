@@ -28,6 +28,7 @@ export class Dogs extends React.Component{
                 let rows = [];
                 for (let i = 0; i < result.length; i++) {
                     rows.push(<Div
+                        key={i}
                         index={i+1}
                         name={result[i].name}
                         photo={result[i].photo}
