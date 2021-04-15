@@ -13,24 +13,23 @@ export class Admin extends React.Component{
         }
     }
     componentDidMount() {
-
     }
 
     render() {
         return(
             <section className="Volunteer-form-area section-gap">
                 <AdminMenu/>
-                <switch>
+                <Switch>
                     <Route path="/admin/addCat">
-                        <AddCat page={this.props}/>
+                        <AddCat/>
                     </Route>
                     <Route path="/admin/addDog">
                         "Добавить собаку"
                     </Route>
                     <Route path="/admin/addPost">
-                        <AddPost page={this.props}/>
+                        <AddPost/>
                     </Route>
-                </switch>
+                </Switch>
             </section>
 
     )}

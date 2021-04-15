@@ -1,48 +1,60 @@
 import React from "react";
+import SunEditor from "suneditor-react";
+import 'suneditor/dist/css/suneditor.min.css';
 
 export class AddCat extends React.Component{
     constructor(props) {
         super(props);
+        this.sunEditorRef = React.createRef();
         this.state = {
             nickname: "",
             text: "",
         }
-        this.handleInputChange = this.handleInputChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handlerInputChange = this.handlerInputChange.bind(this);
+        this.handlerSubmit= this.handlerSubmit.bind(this);
     }
-    handleInputChange(e){
+    componentDidMount() {
+
+    }
+    handlerInputChange(e){
         const name = e.target.name;
-        const value =e.target.value;
+        const value = e.target.value;
         this.setState({
             [name]: value
         })
     }
-    handleSubmit(e){
+    handlerSubmit(e){
         e.preventDefault();
         const formData = new FormData();
-        formData.append('cat',this.state.nickname);
-        formData.append('cat',this.state.text);
-        fetch('http://psnov555_fond/addCat',{
+        formData.append('nickname',this.state.nickname);
+        formData.append('text',this.state.text);
+        fetch('http://localhost/php/addCat',{
             method: "POST",
             body: formData
         })
             .then(response=>response.json())
-            .then(result=>{
-                if(result.result === "success"){
-                    alert("Кошка добавлена");
-                }
-            })
+            .then(result=>console.log(result));
     }
     render() {
-        return (
+        return(
             <div className="container">
-                <div className="col-sm-6 mx-auto">
-                    <form onSubmit={this.handleSubmit}>
+                <div className="col-sm-9 mx-auto">
+                    <form onSubmit={this.handlerSubmit}>
                         <div className="mb-3">
-                            <input value={this.state.nickname} onChange={this.handleInputChange} name="nickname" type="text" className="form-control" placeholder="Введите кличку"/>
+                            <input value={this.state.nickname} onChange={this.handlerInputChange} name="nickname" type="text" placeholder="Кличка" className="form-control"/>
                         </div>
                         <div className="mb-3">
-                            <input value={this.state.text} onChange={this.handleInputChange} name="text" type="text" className="form-control" placeholder="Добавьте описание"/>
+                            <SunEditor
+                                ref={this.sunEditorRef}
+                                name="text"
+                                onChange={(value)=>{
+                                    const name = (this.sunEditorRef.current.props.name);
+                                    this.setState({
+                                        [name]: value
+                                    })
+                                }}
+                                placeholder="Добавьте текст"
+                                height="400px"/>
                         </div>
                         <div className="mb-3 text-center">
                             <input type="submit" className="btn btn-primary"/>
