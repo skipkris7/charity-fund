@@ -9,14 +9,14 @@ export class OneDog extends React.Component {
             name: '',
             text: '',
             id: '',
-            photo2:''
+            photo:''
         }
     }
 
     componentDidMount() {
         console.log("Компонет Post отрисован");
         const formData = new FormData();
-        formData.append('id', this.state.id);
+        formData.append('id',this.props.match.params.id);
         fetch("http://v90355zw.beget.tech/php12/getDog.php", {
             method: 'POST',
             body: formData
@@ -48,13 +48,13 @@ export class OneDog extends React.Component {
                         </div>
                         <div className="carousel-inner">
                             <div className="carousel-item active">
-                                <img src={this.state.photo2} className="d-block w-100" alt="..."/>
+                                <img src={this.state.photo} className="d-block w-100" alt="..."/>
                             </div>
                             <div className="carousel-item">
-                                <img src={this.state.photo3} className="d-block w-100" alt="..."/>
+                                <img src={this.state.photo} className="d-block w-100" alt="..."/>
                             </div>
                             <div className="carousel-item">
-                                <img src={this.state.photo4} className="d-block w-100" alt="..."/>
+                                <img src={this.state.photo} className="d-block w-100" alt="..."/>
                             </div>
                         </div>
                         <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"

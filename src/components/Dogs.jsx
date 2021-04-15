@@ -6,7 +6,7 @@ function Div(props){
                 <div className="single-cat-list" style={{borderStyle:"solid"}}>
                     <NavLink to="/OneDog">
                         <p style={{fontSize:30,textAlign:"center",color:"black",fontFamily:"cursive"}}>{props.name}</p>
-                        <img src={props.photo} alt="" style={{width:250,height:350}}/>
+                        <img src={props.photo} alt="" style={{width:250,height:355}}/>
                     </NavLink>
                 </div>
          </div>
