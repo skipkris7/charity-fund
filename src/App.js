@@ -13,7 +13,6 @@ import {Cats} from "./components/Cats";
 import {OneCat} from "./components/OneCat";
 import {Footer} from "./components/Footer";
 import {Header} from "./components/Header";
-import {MainBanner} from "./components/MainBanner";
 import {OnePost} from "./components/OnePost";
 import {Admin} from "./admin/Admin";
 import {Route, BrowserRouter} from "react-router-dom";
