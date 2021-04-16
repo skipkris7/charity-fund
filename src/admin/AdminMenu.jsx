@@ -14,9 +14,9 @@ export class AdminMenu extends React.Component{
             <div className="container">
                 <nav className="nav flex-column">
                     <h5>
-                        <NavLink className="nav-link" to="admin/AddCat">Добавить кошку</NavLink>
-                        <NavLink className="nav-link" to="admin/AddDog">Добавить собаку</NavLink>
-                        <NavLink className="nav-link" to="admin/AddPost">Добавить статью</NavLink>
+                        <NavLink className="nav-link" to="AddCat">Добавить кошку</NavLink>
+                        <NavLink className="nav-link" to="AddDog">Добавить собаку</NavLink>
+                        <NavLink className="nav-link" to="AddPost">Добавить статью</NavLink>
                     </h5>
                 </nav>
             </div>
