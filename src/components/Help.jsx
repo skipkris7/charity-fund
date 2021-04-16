@@ -10,12 +10,6 @@ export class Help extends React.Component{
             name: "",
             email: "",
             tel: "",
-            car: "",
-            attendant: "",
-            photo: "",
-            ambassador: "",
-            foster: "",
-            other: "",
             comment: "",
             redirect: false
         }
@@ -37,12 +31,6 @@ export class Help extends React.Component{
         formData.append("name", this.state.name);
         formData.append("email", this.state.email);
         formData.append("tel", this.state.tel);
-        formData.append("car", this.state.car);
-        formData.append("attendant", this.state.attendant);
-        formData.append("photo", this.state.photo);
-        formData.append("ambassador", this.state.ambassador);
-        formData.append("foster", this.state.foster);
-        formData.append("other", this.state.other);
         formData.append("comment", this.state.comment);
         fetch("http://skipkris7.beget.tech/fund/php/handlerVolunteer.php",{
             method: "POST",
@@ -52,7 +40,7 @@ export class Help extends React.Component{
                 this.setState({
                     redirect: true
                 })
-            });
+            })
     }
 
     render(){
@@ -99,62 +87,64 @@ export class Help extends React.Component{
                         </div>
                         <div className="row justify-content-center">
                             <h3 className="mb-20">Заполнить анкету волонтёра</h3>
-                            <form onSubmit={this.handlerSubmit} className="col-lg-9">
-                                <div className="form-group">
-                                    <label htmlFor="first-name">Имя</label>
-                                    <input value={this.state.name} onChange={this.handlerInput} name="name" type="text" className="form-control" placeholder="Имя" style={{width:"250px"}}/>
-                                </div>
-                                <div className="col-6 mb-10">
-                                    <label htmlFor="email">Email</label>
-                                    <input value={this.state.email} onChange={this.handlerInput} name="email" type="email" className="form-control" placeholder="Email" style={{width:"250px"}}/>
-                                </div>
-                                <div className="col-6 mb-30">
-                                    <label htmlFor="phone">Телефон</label>
-                                    <input value={this.state.tel} onChange={this.handlerInput} name="tel" type="tel" className="form-control" placeholder="+7(___)___-__-__" style={{width:"250px"}}/>
-                                </div>
-                                <fieldset className="form-group">
-                                    <label htmlFor="day">Какой вид помощи Вам ближе?</label>
-                                    <div className="form-group ">
-                                        <div className="form-check form-check-inline">
-                                            <label className="form-check-label">
-                                                <input value={this.state.car} onChange={this.handlerInput} name="car" className="form-check-input" type="checkbox" id="inlineRadio1" checked /> Автоволонтёр
-                                            </label>
-                                        </div>
-                                        <div className="form-check form-check-inline">
-                                            <label className="form-check-label">
-                                                <input value={this.state.attendant} onChange={this.handlerInput} name="attendant" className="form-check-input" type="checkbox" id="inlineRadio2" checked /> Сопровождающий
-                                            </label>
-                                        </div>
-                                        <div className="form-check form-check-inline">
-                                            <label className="form-check-label">
-                                                <input value={this.state.photo} onChange={this.handlerInput} name="photo" className="form-check-input" type="checkbox" id="inlineRadio3" checked /> Фотограф
-                                            </label>
-                                        </div>
-                                        <div className="form-check form-check-inline">
-                                            <label className="form-check-label">
-                                                <input value={this.state.ambassador} onChange={this.handlerInput} name="ambassador" className="form-check-input" type="checkbox" id="inlineRadio2" checked /> Амбассадор
-                                            </label>
-                                        </div>
-                                        <div className="form-check form-check-inline">
-                                            <label className="form-check-label">
-                                                <input value={this.state.foster} onChange={this.handlerInput} name="foster" className="form-check-input" type="checkbox" id="inlineRadio2" checked /> Передержка
-                                            </label>
-                                        </div>
-                                        <div className="form-check form-check-inline">
-                                            <label className="form-check-label">
-                                                <input value={this.state.other} onChange={this.handlerInput} name="other" className="form-check-input" type="checkbox" id="inlineRadio2" checked /> Другое
-                                            </label>
-                                        </div>
+                            <div className="container ml-50">
+                                <form onSubmit={this.handlerSubmit} className="form-area">
+                                    <div className="col-lg-9 form-group">
+                                        <label htmlFor="first-name">Имя</label>
+                                        <input value={this.state.name} onChange={this.handlerInput} name="name" type="text" className="form-control" placeholder="Имя" style={{width:"250px"}}/>
                                     </div>
-                                </fieldset>
-                                <div className="form-group">
-                                    <label htmlFor="note">Комментарий</label>
-                                    <textarea value={this.state.comment} onChange={this.handlerInput} name="comment" className="form-control" id="exampleTextarea" rows="5" placeholder="Введите сюда текст Вашего комментария" style={{width:"700px"}}/>
-                                </div>
-                                <div className="col-sm-3 d-flex ml-auto mr-50">
-                                    <input type="submit" className="form-control btn primary-btn" style={{borderRadius:"40px", height:"50px"}} value="Отправить"/>
-                                </div>
-                            </form>
+                                    <div className="col-lg-9 form-group">
+                                        <label htmlFor="email">Email</label>
+                                        <input value={this.state.email} onChange={this.handlerInput} name="email" type="email" className="form-control" placeholder="Email" style={{width:"250px"}}/>
+                                    </div>
+                                    <div className="col-6 form-group">
+                                        <label htmlFor="phone">Телефон</label>
+                                        <input value={this.state.tel} onChange={this.handlerInput} name="tel" type="tel" className="form-control" placeholder="+7(___)___-__-__" style={{width:"250px"}}/>
+                                    </div>
+                                    <fieldset className="form-group">
+                                        <label htmlFor="day">Какой вид помощи Вам ближе?</label>
+                                        <div className="form-group ">
+                                            <div className="form-check form-check-inline">
+                                                <label className="form-check-label">
+                                                    <input value="Yes" onChange={this.handlerInput} name="car" className="form-check-input" type="checkbox" /> Автоволонтёр
+                                                </label>
+                                            </div>
+                                            <div className="form-check form-check-inline">
+                                                <label className="form-check-label">
+                                                    <input value="Yes" onChange={this.handlerInput} name="attendant" className="form-check-input" type="checkbox" /> Сопровождающий
+                                                </label>
+                                            </div>
+                                            <div className="form-check form-check-inline">
+                                                <label className="form-check-label">
+                                                    <input value="Yes" onChange={this.handlerInput} name="photo" className="form-check-input" type="checkbox" /> Фотограф
+                                                </label>
+                                            </div>
+                                            <div className="form-check form-check-inline">
+                                                <label className="form-check-label">
+                                                    <input value="Yes" onChange={this.handlerInput} name="ambassador" className="form-check-input" type="checkbox" /> Амбассадор
+                                                </label>
+                                            </div>
+                                            <div className="form-check form-check-inline">
+                                                <label className="form-check-label">
+                                                    <input value="Yes" onChange={this.handlerInput} name="foster" className="form-check-input" type="checkbox" /> Передержка
+                                                </label>
+                                            </div>
+                                            <div className="form-check form-check-inline">
+                                                <label className="form-check-label">
+                                                    <input value="Yes" onChange={this.handlerInput} name="other" className="form-check-input" type="checkbox" /> Другое
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                    <div className="form-group col-lg-9">
+                                        <label htmlFor="note">Комментарий</label>
+                                        <textarea value={this.state.comment} onChange={this.handlerInput} name="comment" className="form-control" rows="5" placeholder="Введите сюда текст Вашего комментария" style={{width:"700px"}}/>
+                                    </div>
+                                    <div className="col-sm-2 d-flex">
+                                        <input type="submit" className="form-control btn primary-btn" style={{borderRadius:"40px", height:"50px"}} value="Отправить"/>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </section>
