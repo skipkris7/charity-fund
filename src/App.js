@@ -40,7 +40,7 @@ class App extends React.Component{
               <Route path="/dogs" render={()=><Dogs/>}/>
               <Route path="/OneDog" render={()=><OneDog/>}/>
               <Route path="/cats" render={()=><Cats/>}/>
-              <Route path="/onecat" render={()=><OneCat/>}/>
+              <Route path="/OneCat" render={()=><OneCat/>}/>
               <Route path="/help" render={()=><Help/>}/>
               <Route path="/articles" render={()=><Articles/>}/>
               <Route path="/post" render={()=><OnePost/>}/>
