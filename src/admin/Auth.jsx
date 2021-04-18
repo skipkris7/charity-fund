@@ -14,8 +14,8 @@ export class Auth extends React.Component{
         this.handleSubmit= this.handleSubmit.bind(this);
     }
     handleInput(e){
-        const name = e.target.login;
-        const value = e.target.password;
+        const name = e.target.name;
+        const value = e.target.value;
         this.setState({
             [name]:value
         })
@@ -41,25 +41,28 @@ export class Auth extends React.Component{
     }
     render() {
         const redirect = this.state.redirect;
-        if(redirect){
-            return <Redirect to="/admin/addPost"/>;
-        }else {
+        if(Redirect){
+            return <Redirect to="/admin/addCat"/>;
+        }else{
             return (
-                <div className="container">
-                    <div className="col-sm-5 mx-auto">
-                        <form onSubmit={this.handleSubmit}>
-                            <div className="mb-3">
-                                <input value={this.state.login} onChange={this.handleInput} name="login" type="text" className="form-control" placeholder="login"/>
-                            </div>
-                            <div className="mb-3">
-                                <input value={this.state.password} onChange={this.handleInput} name="password" type="password" className="form-control" placeholder="password"/>
-                            </div>
-                            <div className="mb-3 text-center">
-                                <input type="submit" value="Войти" className="btn btn-primary"/>
-                            </div>
-                        </form>
+                <section className="Volunteer-form-area section-gap">
+                    <div className="container">
+                        <div className="col-sm-5 mx-auto">
+                            <form onSubmit={this.handleSubmit}>
+                                <div className="mb-3">
+                                    <input value={this.state.login} onChange={this.handleInput} name="login" type="text" className="form-control" placeholder="login"/>
+                                </div>
+                                <div className="mb-3">
+                                    <input value={this.state.password} onChange={this.handleInput} name="password" type="password" className="form-control" placeholder="password"/>
+                                </div>
+                                <div className="mb-3 text-center">
+                                    <input type="submit" value="Войти" className="btn btn-primary"/>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                </div>)
+                </section>
+            )
         }
     }
 }

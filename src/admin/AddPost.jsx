@@ -54,14 +54,23 @@ export class AddPost extends React.Component{
                             <SunEditor
                                 ref={this.sunEditorRef}
                                 name="text"
+                                placeholder="Текст статьи"
+                                height="100%"
+                                setOptions = {
+                                        { buttonList:[
+                                            ['undo', 'redo', 'font', 'fontSize', 'formatBlock'],
+                                            ['bold', 'underline', 'italic', 'strike', 'subscript', 'superscript', 'removeFormat'],
+                                            ['fontColor', 'hiliteColor', 'outdent', 'indent', 'align', 'horizontalRule', 'list', 'table'],
+                                            ['link', 'image', 'video', 'fullScreen', 'showBlocks', 'codeView', 'preview', 'print', 'save']
+                                        ]
+                                    }
+                                }
                                 onChange={(value)=>{
                                     const name = (this.sunEditorRef.current.props.name);
                                     this.setState({
                                         [name]: value
                                     })
-                                }}
-                                placeholder="Текст статьи"
-                                height="400px"/>
+                                }}/>
                         </div>
                         <div className="mb-3">
                             <input value={this.state.author} onChange={this.handlerInput} name="author" type="text" placeholder="Автор" className="form-control"/>
