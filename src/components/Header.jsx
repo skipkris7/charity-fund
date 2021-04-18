@@ -33,44 +33,44 @@ export class Header extends React.Component{
                     </div>
                 </div>
                 <div className="container">
-                    <div className="row d-flex">
+                    <div className="row">
                         <div className="col-md-11 m-auto">
-                            <OwlCarousel className='owl-theme relative' loop={true} nav={true} items={3} autoplay={true}>
+                            <OwlCarousel className='main-carousel relative d-flex' loop autoplay={true}>
                                 <div className="image-carusel active">
-                                    <Link to='/gallery'><img className="img-fluid" src={carusel1} style={{height:'300px'}} alt="cat"/></Link>
+                                    <Link to='/gallery'><img className="img-fluid" src={carusel1}  alt="cat"/></Link>
                                 </div>
                                 <div className="image-carusel active">
-                                    <Link to='/gallery'><img className="img-fluid" src={carusel2} style={{height:'300px'}} alt="dog"/></Link>
+                                    <Link to='/gallery'><img className="img-fluid" src={carusel2} alt="dog"/></Link>
                                 </div>
                                 <div className="image-carusel active">
-                                    <Link to='/gallery'><img className="img-fluid" src={carusel3} style={{height:'300px'}} alt="cat"/></Link>
+                                    <Link to='/gallery'><img className="img-fluid" src={carusel3} alt="cat"/></Link>
                                 </div>
                                 <div className="image-carusel active">
-                                    <Link to='/gallery'><img className="img-fluid" src={carusel4} style={{height:'300px'}} alt="dog"/></Link>
+                                    <Link to='/gallery'><img className="img-fluid" src={carusel4} alt="dog"/></Link>
                                 </div>
                                 <div className="image-carusel active">
-                                    <Link to='/gallery'><img className="img-fluid" src={carusel5} style={{height:'300px'}} alt="cat"/></Link>
+                                    <Link to='/gallery'><img className="img-fluid" src={carusel5} alt="cat"/></Link>
                                 </div>
                                 <div className="image-carusel active">
-                                    <Link to='/gallery'><img className="img-fluid" src={carusel6} style={{height:'300px'}} alt="dog"/></Link>
+                                    <Link to='/gallery'><img className="img-fluid" src={carusel6} alt="dog"/></Link>
                                 </div>
                                 <div className="mage-carusel active">
-                                    <Link to='/gallery'><img className="img-fluid" src={carusel7} style={{height:'300px'}} alt="cat"/></Link>
+                                    <Link to='/gallery'><img className="img-fluid" src={carusel7} alt="cat"/></Link>
                                 </div>
                                 <div className="image-carusel active">
-                                    <Link to='/gallery'><img className="img-fluid" src={carusel8} style={{height:'300px'}} alt="dog"/></Link>
+                                    <Link to='/gallery'><img className="img-fluid" src={carusel8} alt="dog"/></Link>
                                 </div>
                                 <div className="image-carusel active">
-                                    <Link to='/gallery'><img className="img-fluid" src={carusel9} style={{height:'300px'}} alt="cat"/></Link>
+                                    <Link to='/gallery'><img className="img-fluid" src={carusel9} alt="cat"/></Link>
                                 </div>
                                 <div className="image-carusel active">
-                                    <Link to='/gallery'><img className="img-fluid" src={carusel10} style={{height:'300px'}} alt="dog"/></Link>
+                                    <Link to='/gallery'><img className="img-fluid" src={carusel10} alt="dog"/></Link>
                                 </div>
                                 <div className="image-carusel active">
-                                    <Link to='/gallery'><img className="img-fluid" src={carusel11} style={{height:'300px'}} alt="cat"/></Link>
+                                    <Link to='/gallery'><img className="img-fluid" src={carusel11} alt="cat"/></Link>
                                 </div>
                                 <div className="image-carusel active">
-                                    <Link to='/gallery'><img className="img-fluid" src={carusel12} style={{height:'300px'}} alt="dog"/></Link>
+                                    <Link to='/gallery'><img className="img-fluid" src={carusel12} alt="dog"/></Link>
                                 </div>
                             </OwlCarousel>
                         </div>
