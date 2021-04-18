@@ -1,6 +1,7 @@
 import React from "react";
 import SunEditor from "suneditor-react";
 import 'suneditor/dist/css/suneditor.min.css';
+import {host} from "../config";
 
 export class AddDog extends React.Component{
     constructor(props) {
@@ -28,7 +29,7 @@ export class AddDog extends React.Component{
         const formData = new FormData();
         formData.append('nickname',this.state.nickname);
         formData.append('text',this.state.text);
-        fetch('http://localhost/addDog',{
+        fetch(host+'/addDog',{
             method: "POST",
             body: formData
         })
@@ -39,9 +40,12 @@ export class AddDog extends React.Component{
         return(
             <div className="container">
                 <div className="col-sm-10 mx-auto">
+                    <br/>
+                    <h5>Добавление собак</h5>
+                    <br/>
                     <form onSubmit={this.handlerSubmit}>
                         <div className="mb-3">
-                            <input value={this.state.nickname} onChange={this.handlerInputChange} name="nickname" type="text" placeholder="Кличка" className="form-control"/>
+                            <input value={this.state.nickname} onChange={this.handlerInputChange} name="nickname" type="text" placeholder="Кличка собаки" className="form-control"/>
                         </div>
                         <div className="mb-3">
                             <SunEditor
