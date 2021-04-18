@@ -10,7 +10,7 @@
 
 .fund{
   color: white;
-  text-shadow: 5px 1px 2px dimgrey;
+  text-shadow: 3px 1px 2px dimgrey;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -41,4 +41,7 @@
   to {
     transform: rotate(360deg);
   }
+}
+.image-carusel{
+
 }
