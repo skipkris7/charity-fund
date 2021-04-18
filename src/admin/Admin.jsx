@@ -6,6 +6,7 @@ import {AddPost} from "./AddPost";
 import {AddCat} from "./AddCat";
 import {AddDog} from "./AddDog";
 
+
 export class Admin extends React.Component{
     constructor(props) {
         super(props);
