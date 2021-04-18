@@ -17,6 +17,8 @@ import {OnePost} from "./components/OnePost";
 import {Admin} from "./admin/Admin";
 import {Route, BrowserRouter} from "react-router-dom";
 import {Partners} from "./components/Partners";
+import {Auth} from "./admin/Auth";
+import {Cabinet} from "./components/Cabinet";
 
 
 class App extends React.Component{
@@ -27,7 +29,7 @@ class App extends React.Component{
 
     }
     render() {
-    return (
+    return(
       <div>
           <BrowserRouter>
               <Menu/>
@@ -38,13 +40,15 @@ class App extends React.Component{
               <Route path="/dogs" render={()=><Dogs/>}/>
               <Route path="/OneDog" render={()=><OneDog/>}/>
               <Route path="/cats" render={()=><Cats/>}/>
-              <Route path="/OneCat" render={()=><OneCat/>}/>
+              <Route path="/oneCat" render={()=><OneCat/>}/>
               <Route path="/help" render={()=><Help/>}/>
               <Route path="/articles" render={()=><Articles/>}/>
               <Route path="/post" render={()=><OnePost/>}/>
               <Route path="/contacts" render={()=><Contacts/>}/>
               <Route path="/partners" render={()=><Partners/>}/>
               <Route exact path="/admin/:page" render={(props)=><Admin {...props}/>}/>
+              <Route path="/auth" render={()=><Auth/>}/>
+              <Route path="/cabinet" render={()=><Cabinet/>}/>
               <Footer/>
           </BrowserRouter>
       </div>

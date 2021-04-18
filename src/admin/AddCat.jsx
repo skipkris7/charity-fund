@@ -1,6 +1,7 @@
 import React from "react";
 import SunEditor from "suneditor-react";
 import 'suneditor/dist/css/suneditor.min.css';
+import {host} from "../config";
 
 export class AddCat extends React.Component{
     constructor(props) {
@@ -28,7 +29,7 @@ export class AddCat extends React.Component{
         const formData = new FormData();
         formData.append('nickname',this.state.nickname);
         formData.append('text',this.state.text);
-        fetch('http://localhost/addCat',{
+        fetch(host+'/addCat',{
             method: "POST",
             body: formData
         })
@@ -39,14 +40,27 @@ export class AddCat extends React.Component{
         return(
             <div className="container">
                 <div className="col-sm-10 mx-auto">
+                    <br/>
+                    <h5>Добавление кошек</h5>
+                    <br/>
                     <form onSubmit={this.handlerSubmit}>
                         <div className="mb-3">
-                            <input value={this.state.nickname} onChange={this.handlerInputChange} name="nickname" type="text" placeholder="Кличка" className="form-control"/>
+                            <input value={this.state.nickname} onChange={this.handlerInputChange} name="nickname" type="text" placeholder="Кличка кошки" className="form-control"/>
                         </div>
                         <div className="mb-3">
                             <SunEditor
                                 ref={this.sunEditorRef}
                                 name="text"
+                                setOptions = {
+                                    {
+                                        buttonList:[
+                                            ['undo', 'redo', 'font', 'fontSize', 'formatBlock'],
+                                            ['bold', 'underline', 'italic', 'strike', 'subscript', 'superscript', 'removeFormat'],
+                                            ['fontColor', 'hiliteColor', 'outdent', 'indent', 'align', 'horizontalRule', 'list', 'table'],
+                                            ['link', 'image', 'video', 'fullScreen', 'showBlocks', 'codeView', 'preview', 'print', 'save']
+                                        ]
+                                    }
+                                }
                                 onChange={(value)=>{
                                     const name = (this.sunEditorRef.current.props.name);
                                     this.setState({

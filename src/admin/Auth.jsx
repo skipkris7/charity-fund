@@ -1,11 +1,14 @@
 import React from 'react';
+import {host} from "../config";
+import {Redirect} from 'react-router-dom';
 
 export class Auth extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            email: "",
-            pass: ""
+            login: "",
+            password: "",
+            redirect: false
         }
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit= this.handleSubmit.bind(this);
@@ -20,32 +23,46 @@ export class Auth extends React.Component{
     handleSubmit(e){
         e.preventDefault();
         const formData = new FormData();
-        formData.append("email",this.state.email);
-        formData.append("pass",this.state.pass); // прописать адреса (завести БД на сервере)
-        fetch("http://?/php/handlerAuth.php",{
+        formData.append("login",this.state.login);
+        formData.append("password",this.state.password);
+        fetch(host+"/php/handlerAuth.php",{
+            credentials: 'include',
             method: "POST",
             body: formData
         })
             .then(response=>response.json())
-            .then(result=>console.log(result));
+            .then(result=>{
+                if(result.result === "success"){
+                    this.setState({
+                        redirect: true
+                    })
+                }
+            });
     }
     render() {
-        return (
-            <div className="container">
-                <div className="col-sm-5 mx-auto">
-                    <form onSubmit={this.handleSubmit}>
-                        <div className="mb-3">
-                            <input value={this.state.email} onChange={this.handleInput} name="email" type="text" className="form-control" placeholder="login"/>
+        const redirect = this.state.redirect;
+        if(Redirect){
+            return <Redirect to="/admin/addCat"/>;
+        }else{
+            return (
+                <section className="Volunteer-form-area section-gap">
+                    <div className="container">
+                        <div className="col-sm-5 mx-auto">
+                            <form onSubmit={this.handleSubmit}>
+                                <div className="mb-3">
+                                    <input value={this.state.login} onChange={this.handleInput} name="login" type="text" className="form-control" placeholder="login"/>
+                                </div>
+                                <div className="mb-3">
+                                    <input value={this.state.password} onChange={this.handleInput} name="password" type="password" className="form-control" placeholder="password"/>
+                                </div>
+                                <div className="mb-3 text-center">
+                                    <input type="submit" value="Войти" className="btn btn-primary"/>
+                                </div>
+                            </form>
                         </div>
-                        <div className="mb-3">
-                            <input value={this.state.pass} onChange={this.handleInput} name="pass" type="password" className="form-control" placeholder="pass"/>
-                        </div>
-                        <div className="mb-3 text-center">
-                            <input type="submit" value="Войти" className="btn btn-primary"/>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        )
+                    </div>
+                </section>
+            )
+        }
     }
 }
