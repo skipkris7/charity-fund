@@ -6,7 +6,6 @@ export class OneCat extends React.Component {
         this.state = {
             nickname: '',
             text: '',
-
             photo_2: '',
             photo_3: '',
             photo_4: '',
@@ -28,7 +27,6 @@ export class OneCat extends React.Component {
                 this.setState({
                     nickname: result.nickname,
                     text: result.text,
-
                     photo_2: result.photo_2,
                     photo_3: result.photo_3,
                     photo_4: result.photo_4,

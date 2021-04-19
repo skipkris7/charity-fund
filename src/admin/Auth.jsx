@@ -41,7 +41,7 @@ export class Auth extends React.Component{
     }
     render() {
         const redirect = this.state.redirect;
-        if(Redirect){
+        if(redirect){
             return <Redirect to="/admin/addCat"/>;
         }else{
             return (
