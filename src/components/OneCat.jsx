@@ -51,8 +51,8 @@ export class OneCat extends React.Component {
                      </p>
                 </div>
                 <br/>
-                {/*отображаем фото кошек: одно c предыдущей страницы в div как вариант, а остальные в figure(лучше в figure) */}
-                {/*ОТОБРАЖЕНИЕ в div * div className="container">
+                {/*отображаем фото кошек */}
+                {/*(отображение в div)  <div className="container">
                     <div className="single-cat-list" >
                          <div className="row">
                              <img className="figure-img img-fluid img-thumbnail rounded" src={"http://creatingws.beget.tech/" + this.state.photo_1} alt="cat" style={{width:262,height:350}}/>
