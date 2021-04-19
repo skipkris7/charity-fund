@@ -50,7 +50,7 @@ export class Menu extends React.Component{
                                     </NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink className="nav-link" style={{color:'grey'}} to="/admin">Кабинет</NavLink>
+                                    <NavLink className="nav-link" style={{color:'grey'}} to="/auth">Кабинет</NavLink>
                                 </li>
                             </ul>
                         </nav>
