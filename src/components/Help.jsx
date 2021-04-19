@@ -57,7 +57,8 @@ export class Help extends React.Component{
     }
 
     render(){
-        if(this.state.redirect){
+        const redirect = this.state.redirect;
+        if(redirect){
             return <Redirect to="/" />
         }else{
             return(
