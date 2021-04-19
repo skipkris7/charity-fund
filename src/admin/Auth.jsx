@@ -42,7 +42,7 @@ export class Auth extends React.Component{
     render() {
         const redirect = this.state.redirect;
         if(redirect){
-            return <Redirect to="/admin/addCat"/>;
+            return <Redirect to="/cabinet"/>;
         }else{
             return (
                 <section className="Volunteer-form-area section-gap">
