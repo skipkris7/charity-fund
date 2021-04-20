@@ -9,14 +9,16 @@ export class OneDog extends React.Component {
             name: '',
             text: '',
             id: '',
-            photo:''
+            photo1:'',
+            photo2:'',
+            photo3:'',
         }
     }
 
     componentDidMount() {
         console.log("Компонет Post отрисован");
         const formData = new FormData();
-        formData.append('id',1);
+        formData.append('id',window.location.pathname.split('/')[2]);
         fetch("http://v90355zw.beget.tech/php12/getDog.php", {
             method: 'POST',
             body: formData
@@ -26,53 +28,40 @@ export class OneDog extends React.Component {
                 console.log(result);
                 this.setState({
                     id:result.id,
-                    name: result.name,
+                    nickname: result.nickname,
                     text: result.text,
-                    photo: result.photo
+                    photo1: result.photo1,
+                    photo2: result.photo2,
+                    photo3: result.photo3,
+                    photo4: result.photo4
                 });
             })
     }
 
     render() {
         return (<div className="container-fluid" style={{backgroundImage:"url(https://image.freepik.com/free-vector/cute-paw-footprint-seamless-pattern-background_42349-767.jpg)"}}>
-                    <div className="container-fluid">
-                        <p>name</p>
-                    <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
-                        <div className="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"/>
-
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"/>
-
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"/>
-
-                        </div>
-                        <div className="carousel-inner">
-                            <div className="carousel-item active">
-                                <img src={this.state.photo} className="d-block w-100" alt="..."/>
-                            </div>
-                            <div className="carousel-item">
-                                <img src={this.state.photo} className="d-block w-100" alt="..."/>
-                            </div>
-                            <div className="carousel-item">
-                                <img src={this.state.photo} className="d-block w-100" alt="..."/>
-                            </div>
-                        </div>
-                        <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                                data-bs-slide="prev">
-                            <span className="carousel-control-prev-icon" aria-hidden="true"/>
-                            Предыдущий
-                        </button>
-                        <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"  data-bs-slide="next">
-
-                            <span className="carousel-control-next-icon" aria-hidden="true"/>
-                            <span className="visually-hidden">Следующий</span>
-                        </button>
-                    </div>
-                    <div>
-                        <p>{this.state.text}</p>
-                    </div>
+                <div className="container" style={{height:100}}></div>
+                <div className="container-fluid my-5" style={{textAlign:"center",fontSize:"xx-large",fontFamily:"cursive",color:"black",textDecoration:"underline"}}>
+                    {this.state.nickname}
                 </div>
-            </div>
+                <div className="container text-center shadow-sm p-3 mb-5 bg-white rounded lh-lg">
+                    <p style={{fontSize:20, color: "#3c3c3c", lineHeight: 2, fontFamily: "cursive"}}>
+                        {this.state.text}
+                    </p>
+                </div>
+
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-6 col-md-6 my-5">
+                            <img src={this.state.photo2} style={{width:400,height:400}} alt="" className="img-fluid"/>
+
+                        </div>
+                        <div className="col-lg-6 col-md-6 my-5">
+                                <img src={this.state.photo3}  style={{width:300,height:400}} alt="" className="img-fluid"/>
+                        </div>
+                     </div>
+                </div>
+             </div>
 
         )
     }

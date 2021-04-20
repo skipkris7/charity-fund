@@ -4,9 +4,9 @@ import {Link, NavLink} from "react-router-dom";
 function Div(props){
     return <div className="col-lg-3 col-md-6">
                 <div className="single-cat-list" style={{borderStyle:"solid"}}>
-                    <NavLink to="/OneDog">
-                        <p style={{fontSize:30,textAlign:"center",color:"black",fontFamily:"cursive"}}>{props.name}</p>
-                        <img src={props.photo} alt="" style={{width:250,height:355}}/>
+                    <NavLink to={"/OneDog/"+props.id}>
+                        <p style={{fontSize:30,textAlign:"center",color:"black",fontFamily:"cursive"}}>{props.nickname}</p>
+                        <img src={props.photo1} alt="" style={{width:250,height:355}}/>
                     </NavLink>
                 </div>
          </div>
@@ -30,8 +30,9 @@ export class Dogs extends React.Component{
                     rows.push(<Div
                         key={i}
                         index={i+1}
-                        name={result[i].name}
-                        photo={result[i].photo}
+                        id = {result[i].id}
+                        nickname={result[i].nickname}
+                        photo1={result[i].photo1}
                     />)
                 }
                 this.setState({
