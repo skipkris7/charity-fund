@@ -41,24 +41,24 @@ export class Cats extends React.Component{
     }
     render() {
         return (
-                <section className="cat-list-area section-gap"
-                style={{backgroundImage:"url(https://image.freepik.com/free-vector/cute-paw-footprint-seamless-pattern-background_42349-767.jpg)"}}>
+            <section className="cat-list-area section-gap"
+                     style={{backgroundImage:"url(https://image.freepik.com/free-vector/cute-paw-footprint-seamless-pattern-background_42349-767.jpg)"}}>
 
-                    <div className="text-center shadow-sm p-3 mb-5 bg-white rounded ">
-                        <h1><p style={{fontSize:22,color:"#140395",fontFamily:"Georgia" }}>Сегодня <br />
+                <div className="text-center shadow-sm p-3 mb-5 bg-white rounded ">
+                    <h1><p style={{fontSize:22,color:"#140395",fontFamily:"Georgia" }}>Сегодня <br />
                         в БЛАГОТВОРИТЕЛЬНОМ ФОНДЕ "БУДУ РЯДОМ" ждут хозяина:</p></h1>
-                        <br />
-                    </div>
+                    <br />
+                </div>
 
-                    <div className="container">
-                        <div className="row">
-                                <div className="single-cat-list" >
-                                    <div className="row">{this.state.cats}</div>
-                                </div>
+                <div className="container">
+                    <div className="row">
+                        <div className="single-cat-list" >
+                            <div className="row">{this.state.cats}</div>
                         </div>
                     </div>
+                </div>
 
-                </section>
-            )
+            </section>
+        )
     }
 }
