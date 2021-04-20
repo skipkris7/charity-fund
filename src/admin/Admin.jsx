@@ -1,5 +1,4 @@
 import React from 'react';
-import {Auth} from "./Auth";
 import {AdminMenu} from './AdminMenu';
 import {Route, Switch} from "react-router-dom";
 import {AddPost} from "./AddPost";
