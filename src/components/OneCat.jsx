@@ -6,7 +6,7 @@ export class OneCat extends React.Component {
         this.state = {
             nickname: '',
             text: '',
-
+            photo_1: '',
             photo_2: '',
             photo_3: '',
             photo_4: '',
@@ -28,56 +28,43 @@ export class OneCat extends React.Component {
                 this.setState({
                     nickname: result.nickname,
                     text: result.text,
-
+                    photo_1: result.photo_1,
                     photo_2: result.photo_2,
                     photo_3: result.photo_3,
                     photo_4: result.photo_4,
                     photo_5: result.photo_5
                 });
-
             })
     }
     render() {
         return (
-            <section className="cat-list-area section-gap "
-            style={{backgroundImage:"url(https://image.freepik.com/free-vector/cute-paw-footprint-seamless-pattern-background_42349-767.jpg)"}}>>
-                    <h2 class="text-center" style={{color:"#8c0494",fontFamily:"Georgia"}}>
-                        <p> {this.state.nickname}</p>
-                        <br/>
-                    </h2>
+            <div className="cat-list-area section-gap " style={{backgroundImage:"url(https://image.freepik.com/free-vector/cute-paw-footprint-seamless-pattern-background_42349-767.jpg)"}}>
+                <h2 class="text-center" style={{color:"#8c0494",fontFamily:"Georgia"}}><p> {this.state.nickname}</p><br/></h2>
+
                 <div className="container text-center shadow-sm p-3 mb-5 bg-white rounded lh-lg">
-                        <p style={{fontSize:20, color: "#3c3c3c", lineHeight: 2, fontFamily: "Georgia"}}>
-                            {this.state.text}
-                        </p>
+                     <p style={{fontSize:20, color: "#3c3c3c", lineHeight: 2, fontFamily: "Georgia"}}>{this.state.text}</p>
                 </div>
-                <br/>
-                {/*отображаем фото кошек*/}
-                <div className="container">
-                    <div className="single-cat-list" >
-                         <div className="row">
-                             <img className="figure-img img-fluid img-thumbnail rounded" src={this.state.photo_1} alt="cat" style={{width:262,height:350}}/>
-                             <br/>
-                         </div>
+{/*отображение фото кошек*/}
+                <div className="container py-5">
+                    <div className="col-md-5 mx-auto p-3">
+                        <figure className="figure">
+                            <img src={"http://creatingws.beget.tech/" + this.state.photo_1} alt="cat" className="figure-img img-fluid img-thumbnail rounded" />
+                        </figure>
+                        <figure className="figure">
+                            <img src={"http://creatingws.beget.tech/" + this.state.photo_2} alt="cat" className="figure-img img-fluid img-thumbnail rounded" />
+                        </figure>
+                        <figure className="figure">
+                            <img src={"http://creatingws.beget.tech/" + this.state.photo_3} alt="cat" className="figure-img img-fluid img-thumbnail rounded" />
+                        </figure>
+                        <figure className="figure">
+                            <img src={"http://creatingws.beget.tech/" + this.state.photo_4} alt="cat" className="figure-img img-fluid img-thumbnail rounded" />
+                        </figure>
+                        <figure className="figure">
+                            <img src={"http://creatingws.beget.tech/" + this.state.photo_5} alt="cat" className="figure-img img-fluid img-thumbnail rounded" />
+                        </figure>
                     </div>
-
-                             <figure className="figure">
-                                <img src={this.state.photo_2} alt="cat" className="figure-img img-fluid img-thumbnail rounded" style={{width:270,height:380}}/>
-                             </figure>
-                             <figure className="figure">
-                                <img src={this.state.photo_3} alt="cat" className="figure-img img-fluid img-thumbnail rounded" style={{width:270,height:380}}/>
-                             </figure>
-                             <figure className="figure">
-                                <img src={this.state.photo_4} alt="cat" className="figure-img img-fluid img-thumbnail rounded" style={{width:270,height:380}}/>
-                             </figure>
-                             <figure className="figure">
-                                <img src={this.state.photo_5} alt="cat" className="figure-img img-fluid img-thumbnail rounded" style={{width:270,height:380}}/>
-                             </figure>
-                             {/*</div>*/}
-
-                    {/*     </div>*/}
                 </div>
-
-            </section>
+            </div>
         )
     }
 }

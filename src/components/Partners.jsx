@@ -10,10 +10,10 @@ export class Partners extends React.Component{
         return(
             <div className="partners-container mt-100 mb-50 text-center">
                 <h1 className="partners mb-30">Партнёры фонда</h1>
-                <Link to="https://marsik.spb.ru/pomoshch-priyutam/blagotvoritelnyi-fond-budu-ryadom/"><img className="marsik" src={marsik} style={{height:'200px'}}/></Link>
-                <Link to="https://www.isa-dora.com/"><img className="isadora" src={isadora} style={{height:'200px'}}/></Link>
-                <Link to="https://joyfulbox.ru/nuzhdy-priyutov/found_budu_ryadom%20"><img className="joyfulbox" src={joyfulbox} style={{height:'200px'}}/></Link>
-                <Link to="https://diamond-animal.ru/"><img className="diamondanimal" src={diamondanimal} style={{height:'200px'}}/></Link>
+                <Link to="https://marsik.spb.ru/pomoshch-priyutam/blagotvoritelnyi-fond-budu-ryadom/"><img className="marsik" src={marsik} style={{height:'200px'}} alt="marsik" /></Link>
+                <Link to="https://www.isa-dora.com/"><img className="isadora" src={isadora} style={{height:'200px'}} alt="isadora" /></Link>
+                <Link to="https://joyfulbox.ru/nuzhdy-priyutov/found_budu_ryadom%20"><img className="joyfulbox" src={joyfulbox} style={{height:'200px'}} alt="joyfulbox" /></Link>
+                <Link to="https://diamond-animal.ru/"><img className="diamondanimal" src={diamondanimal} style={{height:'200px'}} alt="diamondanimal" /></Link>
             </div>
         )
     }

@@ -5,6 +5,7 @@ import {NavLink} from "react-router-dom";
 function Div(props){
     return <div className="col-lg-3 col-md-6">
         <div className="single-cat-list" >
+
             <NavLink to={"/OneCat/"+props.id}>
                 <h3><p style={{fontSize:16,color:"#8c0494",fontFamily:"Georgia" }}>{props.nickname}</p></h3>
                 <img className="figure-img img-fluid img-thumbnail rounded" src={props.photo_1} alt="cat" style={{width:270,height:380}}/>
@@ -31,7 +32,6 @@ export class Cats extends React.Component{
                         id={result[i].id}
                         nickname={result[i].nickname}
                         photo_1={result[i].photo_1}
-
                     />)
                 }
                 this.setState({
@@ -42,7 +42,7 @@ export class Cats extends React.Component{
     render() {
         return (
                 <section className="cat-list-area section-gap"
-                style={{backgroundImage:"url(https://image.freepik.com/free-vector/cute-paw-footprint-seamless-pattern-background_42349-767.jpg)"}}>>
+                style={{backgroundImage:"url(https://image.freepik.com/free-vector/cute-paw-footprint-seamless-pattern-background_42349-767.jpg)"}}>
 
                     <div className="text-center shadow-sm p-3 mb-5 bg-white rounded ">
                         <h1><p style={{fontSize:22,color:"#140395",fontFamily:"Georgia" }}>Сегодня <br />
