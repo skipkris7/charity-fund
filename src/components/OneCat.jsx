@@ -17,17 +17,19 @@ export class OneCat extends React.Component {
     componentDidMount() {
 
         console.log("Компонет OneCat отрисован");
+
         const formData = new FormData();
-        formData.append('id', this.props.match.params.id);
+        formData.append("id", this.props.match.params.id);
         fetch(host+"/getCat", {
-            method: 'POST',
+            method: "POST",
             body: formData
         })
             .then(response => response.json())
             .then(result => {
-                console.log(result);
-                this.setState({
 
+                console.log(result);
+
+                this.setState({
                     nickname: result.nickname,
                     text: result.text,
                     photo_1: result.photo_1,
@@ -53,9 +55,9 @@ export class OneCat extends React.Component {
                 <div className="col-md-12 text-center">
                     <img src={host + this.state.photo_1} alt="cat" className="img-fluid img-thumbnail rounded" />
                     <img src={host + this.state.photo_2} alt="cat" className="img-fluid img-thumbnail rounded" />
-                    <img src={host  + this.state.photo_3} alt="cat" className="img-fluid img-thumbnail rounded" />
-                    <img src={host  + this.state.photo_4} alt="cat" className="img-fluid img-thumbnail rounded" />
-                    <img src={host  + this.state.photo_5} alt="cat" className="img-fluid img-thumbnail rounded" />
+                    <img src={host + this.state.photo_3} alt="cat" className="img-fluid img-thumbnail rounded" />
+                    <img src={host + this.state.photo_4} alt="cat" className="img-fluid img-thumbnail rounded" />
+                    <img src={host + this.state.photo_5} alt="cat" className="img-fluid img-thumbnail rounded" />
                 </div>
 
             </div>

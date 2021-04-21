@@ -3,10 +3,10 @@ import {Link} from "react-router-dom";
 import {host} from "../config";
 
 
-function Info(props){
+function PreviewInfo(props){
     return <div className="col-lg-3 col-md-6">
-        <div className="single-cat-list" >
-            <Link to={"/OneCat/"+props.id}>
+        <div className="info" >
+            <Link to={`/OneCat/${props.id}`}>
                 <h3><p style={{fontSize:26,color:"#8c0494",fontFamily:"Georgia" }}>{props.nickname}</p></h3>
                 <img className="img-fluid img-thumbnail rounded" src={props.photo_1} alt="cat" style={{width:270,height:380}}/>
             </Link>
@@ -26,10 +26,9 @@ export class Cats extends React.Component{
             .then(result=>{
                 let rows = [];
                 for (let i = 0; i < result.length; i++) {
-                    rows.push(<Info
+                    rows.push(<PreviewInfo
                         key={i}
                         index={i+1}
-                        id={result[i].id}
                         nickname={result[i].nickname}
                         photo_1={result[i].photo_1}
                     />)
@@ -39,6 +38,7 @@ export class Cats extends React.Component{
                 })
             })
     }
+
     render() {
         return (
             <section className="cat-list-area section-gap"
