@@ -1,5 +1,18 @@
 import React from 'react';
-// test test
+
+/*
+// функция получить базу данных постов.
+
+function getBlog(blogs)
+{
+    let a;
+
+    blogs.forEach() // перебрать базу данных по одному элементу.
+    create div, h3, p; // создать три или два элемента HTML.
+    h3 = blogs.title; // заполнить значениями.
+    p = blogs.h3;
+}
+*/
 export class Articles extends React.Component{
     render(){
         return(
