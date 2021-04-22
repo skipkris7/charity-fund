@@ -13,64 +13,20 @@ export class Articles extends React.Component{
                                         <img className="img-fluid" src="img/blog/feature-img1.jpg" alt=""/>
                                     </div>
                                 </div>
-
-                                <div className="col-lg-9 col-md-9">
-                                    <a className="posts-title" href="#"><h3>Astronomy Binoculars A Great
-                                        Alternative</h3></a>
-                                    <p className="excert">
-                                        MCSE boot camps have its supporters and its detractors. Some people do not
-                                        understand why you should have to spend money on boot camp when you can get the
-                                        MCSE study materials yourself at a fraction.
-                                    </p>
-                                    <p>
-                                        Boot camps have its supporters and its detractors. Some people do not understand
-                                        why you should have to spend money on boot camp when you can get the MCSE study
-                                        materials yourself at a fraction of the camp price. However, who has the
-                                        willpower to actually sit through a self-imposed MCSE training. who has the
-                                        willpower to actually sit through a self-imposed
-                                    </p>
-                                    <p>
-                                        Boot camps have its supporters and its detractors. Some people do not understand
-                                        why you should have to spend money on boot camp when you can get the MCSE study
-                                        materials yourself at a fraction of the camp price. However, who has the
-                                        willpower to actually sit through a self-imposed MCSE training. who has the
-                                        willpower to actually sit through a self-imposed
-                                    </p>
-                                </div>
-                                <div className="col-lg-12">
-                                    <div className="quotes">
-                                        MCSE boot camps have its supporters and its detractors. Some people do not
-                                        understand why you should have to spend money on boot camp when you can get the
-                                        MCSE study materials yourself at a fraction of the camp price. However, who has
-                                        the willpower to actually sit through a self-imposed MCSE training.
-                                    </div>
-                                    <div className="row mt-30 mb-30">
-                                        <div className="col-6">
-                                            <img className="img-fluid" src="img/blog/post-img1.jpg" alt=""/>
-                                        </div>
-                                        <div className="col-6">
-                                            <img className="img-fluid" src="img/blog/post-img2.jpg" alt=""/>
-                                        </div>
-                                        <div className="col-lg-12 mt-30">
-                                            <p>
-                                                MCSE boot camps have its supporters and its detractors. Some people do
-                                                not understand why you should have to spend money on boot camp when you
-                                                can get the MCSE study materials yourself at a fraction of the camp
-                                                price. However, who has the willpower.
-                                            </p>
-                                            <p>
-                                                MCSE boot camps have its supporters and its detractors. Some people do
-                                                not understand why you should have to spend money on boot camp when you
-                                                can get the MCSE study materials yourself at a fraction of the camp
-                                                price. However, who has the willpower.
-                                            </p>
-                                        </div>
-                                    </div>
+                            </div>
+                            <div>
+                                <h3>Если бы они оставляли завещание…</h3>
+                                <div>
+                                    <p>Уход на радугу любимого питомца – невосполнимая потеря и огромная трагедия, пережить боль от которой не просто. Мы понимаем. Также как понимаем, что далеко не все сразу готовы впустить в своё сердце нового хвостатого и подарить ему дом.
+                                        ⠀
+                                        В таких случаях остаётся наследство, которое часто в растерянных чувствах не понятно куда девать: корм, лекарства, миски, лежаки, поводки, ошейники, одежду, домики, игрушки, лотки, наполнитель для кошачьего туалета и т.д. Всё это убрано с глаз, чтобы не рвать сердце, и сиротливо дожидается своего часа быть отправленным на помойку.
+                                        ⠀
+                                        Но ведь можно не выбрасывать, а передать тем, кто ещё не обрёл свой дом и очень нуждается в помощи. Пожалуйста, свяжитесь с нами – благотворительный  фонд "Буду рядом" с благодарностью примет в дар вещи ушедшего питомца и передаст нуждающимся.
+                                        ⠀
+                                        Уверены, лучший способ почтить память того, кто был верным другом до последнего вздоха - доброе дело.</p>
                                 </div>
                             </div>
-
                         </div>
-
                     </div>
                 </div>
             </section>
