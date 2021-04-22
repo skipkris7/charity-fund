@@ -42,9 +42,9 @@ export class OneCat extends React.Component {
                 <h2 class="text-center" style={{color:"#8c0494",fontFamily:"Georgia"}}><p> {this.state.nickname}</p><br/></h2>
 
                 <div className="container text-center shadow-sm p-3 mb-5 bg-white rounded lh-lg">
-                     <p style={{fontSize:20, color: "#3c3c3c", lineHeight: 2, fontFamily: "Georgia"}}>{this.state.text}</p>
+                    <p style={{fontSize:20, color: "#3c3c3c", lineHeight: 2, fontFamily: "Georgia"}}>{this.state.text}</p>
                 </div>
-{/*отображение фото кошек*/}
+                {/*отображение фото кошек*/}
                 <div className="container py-5">
                     <div className="col-md-5 mx-auto p-3">
                         <figure className="figure">
