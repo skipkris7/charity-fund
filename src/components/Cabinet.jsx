@@ -18,6 +18,7 @@ export class Cabinet extends React.Component{
                 if(result.result !== "error"){
                     this.setState({
                         login: result.login,
+
                     })
                 }
             });
