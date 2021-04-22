@@ -18,7 +18,7 @@ export class OneCat extends React.Component {
         console.log("Компонет OneCat отрисован");
         const formData = new FormData();
         formData.append("id", this.props.match.params.id);
-        fetch(host+"getCat.php", {
+        fetch(host+"/getCat", {
             method: "POST",
             body: formData
         })
