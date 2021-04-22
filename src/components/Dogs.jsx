@@ -1,12 +1,13 @@
 import React from 'react';
 import {Link, NavLink} from "react-router-dom";
+import {host} from "../config";
 
 function Div(props){
     return <div className="col-lg-3 col-md-6">
                 <div className="single-cat-list" style={{borderStyle:"solid"}}>
                     <NavLink to={"/OneDog/"+props.id}>
                         <p style={{fontSize:30,textAlign:"center",color:"black",fontFamily:"cursive"}}>{props.nickname}</p>
-                        <img src={props.photo1} alt="" style={{width:250,height:355}}/>
+                        <img src={props.photo_1} alt="" style={{width:250,height:355}}/>
                     </NavLink>
                 </div>
          </div>
@@ -21,7 +22,7 @@ export class Dogs extends React.Component{
         }
     }
     componentDidMount() {
-        fetch("http://v90355zw.beget.tech/php12/getDogs.php")
+        fetch(host + "/getDogs.php")
             .then(response=>response.json())
             .then(result=>{
                 console.log(result);
@@ -32,7 +33,7 @@ export class Dogs extends React.Component{
                         index={i+1}
                         id = {result[i].id}
                         nickname={result[i].nickname}
-                        photo1={result[i].photo1}
+                        photo_1={result[i].photo_1}
                     />)
                 }
                 this.setState({
