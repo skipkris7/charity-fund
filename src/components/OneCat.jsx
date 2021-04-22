@@ -44,7 +44,7 @@ export class OneCat extends React.Component {
                     <div style={{fontSize:20, color: "#3c3c3c", lineHeight: 1.8, fontFamily: "Georgia"}}>Описание{this.state.text}</div>
                 </div>
                 <div className="col-md-12 text-center">
-                    <img src={host+this.state.photo_1} alt="cat" className="img-fluid img-thumbnail rounded" />
+                    <img src={this.state.photo_1} alt="cat" className="img-fluid img-thumbnail rounded" />
                     <img src={host+this.state.photo_2} alt="cat" className="img-fluid img-thumbnail rounded" />
                     <img src={host+this.state.photo_3} alt="cat" className="img-fluid img-thumbnail rounded" />
                     <img src={host+this.state.photo_4} alt="cat" className="img-fluid img-thumbnail rounded" />
