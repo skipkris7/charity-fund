@@ -39,9 +39,9 @@ export class OneCat extends React.Component {
     render() {
         return (
             <div className="cat-list-area section-gap " style={{backgroundImage:"url(https://thumbs.dreamstime.com/b/pets-seamless-pattern-23238387.jpg)"}}>
-                <h2 class="text-center" style={{color:"#8c0494",fontFamily:"Georgia"}}><p> {this.state.nickname}</p><br/></h2>
+                <h2 class="text-center" style={{color:"#8c0494",fontFamily:"Georgia"}}><p>Кличка{this.state.nickname}</p><br/></h2>
                 <div className="container text-center shadow-sm bg-white rounded lh-lg">
-                    <div style={{fontSize:20, color: "#3c3c3c", lineHeight: 1.8, fontFamily: "Georgia"}}>dangerouslySetInnerHTML={this.state.text}</div>
+                    <div style={{fontSize:20, color: "#3c3c3c", lineHeight: 1.8, fontFamily: "Georgia"}}>текст{this.state.text}</div>
                 </div>
                 <div className="col-md-12 text-center">
                     <img src={host+this.state.photo_1} alt="cat" className="img-fluid img-thumbnail rounded" />
