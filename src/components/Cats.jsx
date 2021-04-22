@@ -1,15 +1,15 @@
 import React from 'react';
-import {NavLink} from "react-router-dom";
+import {Link} from "react-router-dom";
+import {host} from "../config";
 
 
-function Div(props){
+function PreviewInfo(props){
     return <div className="col-lg-3 col-md-6">
-        <div className="single-cat-list" >
-
-            <NavLink to={"/OneCat/"+props.id}>
-                <h3><p style={{fontSize:16,color:"#8c0494",fontFamily:"Georgia" }}>{props.nickname}</p></h3>
-                <img className="figure-img img-fluid img-thumbnail rounded" src={props.photo_1} alt="cat" style={{width:270,height:380}}/>
-            </NavLink>
+        <div className="info" >
+            <Link to={`/OneCat/${props.id}`}>
+                <h3><p style={{fontSize:26,color:"#8c0494",fontFamily:"Georgia" }}>{props.nickname}</p></h3>
+                <img className="img-fluid img-thumbnail rounded" src={props.photo_1} alt="cat" style={{width:270,height:380}}/>
+            </Link>
         </div>
     </div>
 }
@@ -17,19 +17,18 @@ export class Cats extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            cats: [],
+            cats: []
         }
     }
     componentDidMount() {
-        fetch('http://creatingws.beget.tech/php/getCats.php')
+        fetch(host+"/getCats")
             .then(response=>response.json())
             .then(result=>{
                 let rows = [];
                 for (let i = 0; i < result.length; i++) {
-                    rows.push(<Div
+                    rows.push(<PreviewInfo
                         key={i}
                         index={i+1}
-                        id={result[i].id}
                         nickname={result[i].nickname}
                         photo_1={result[i].photo_1}
                     />)
@@ -39,12 +38,13 @@ export class Cats extends React.Component{
                 })
             })
     }
+
     render() {
         return (
             <section className="cat-list-area section-gap"
-                     style={{backgroundImage:"url(https://image.freepik.com/free-vector/cute-paw-footprint-seamless-pattern-background_42349-767.jpg)"}}>
+                     style={{backgroundImage:"url(https://thumbs.dreamstime.com/b/pets-seamless-pattern-23238387.jpg)"}}>
 
-                <div className="text-center shadow-sm p-3 mb-5 bg-white rounded ">
+                <div className="text-center shadow-sm bg-white rounded ">
                     <h1><p style={{fontSize:22,color:"#140395",fontFamily:"Georgia" }}>Сегодня <br />
                         в БЛАГОТВОРИТЕЛЬНОМ ФОНДЕ "БУДУ РЯДОМ" ждут хозяина:</p></h1>
                     <br />
