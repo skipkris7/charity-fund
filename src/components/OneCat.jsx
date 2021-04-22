@@ -1,4 +1,5 @@
 import React from 'react';
+import {host} from "../config";
 
 export class OneCat extends React.Component {
     constructor(props) {
@@ -17,7 +18,7 @@ export class OneCat extends React.Component {
         console.log("Компонет OneCat отрисован");
         const formData = new FormData();
         formData.append("id", this.props.match.params.id);
-        fetch("http://creatingws.beget.tech/php/getCat.php", {
+        fetch(host+"getCat.php", {
             method: "POST",
             body: formData
         })
@@ -43,11 +44,11 @@ export class OneCat extends React.Component {
                     <div style={{fontSize:20, color: "#3c3c3c", lineHeight: 1.8, fontFamily: "Georgia"}}>dangerouslySetInnerHTML={this.state.text}</div>
                 </div>
                 <div className="col-md-12 text-center">
-                    <img src={"http://creatingws.beget.tech/php/getCat.php/"+this.state.photo_1} alt="cat" className="img-fluid img-thumbnail rounded" />
-                    <img src={"http://creatingws.beget.tech/php/getCat.php/"+this.state.photo_2} alt="cat" className="img-fluid img-thumbnail rounded" />
-                    <img src={"http://creatingws.beget.tech/php/getCat.php/"+this.state.photo_3} alt="cat" className="img-fluid img-thumbnail rounded" />
-                    <img src={"http://creatingws.beget.tech/php/getCat.php/"+this.state.photo_4} alt="cat" className="img-fluid img-thumbnail rounded" />
-                    <img src={"http://creatingws.beget.tech/php/getCat.php/"+this.state.photo_5} alt="cat" className="img-fluid img-thumbnail rounded" />
+                    <img src={host+this.state.photo_1} alt="cat" className="img-fluid img-thumbnail rounded" />
+                    <img src={host+this.state.photo_2} alt="cat" className="img-fluid img-thumbnail rounded" />
+                    <img src={host+this.state.photo_3} alt="cat" className="img-fluid img-thumbnail rounded" />
+                    <img src={host+this.state.photo_4} alt="cat" className="img-fluid img-thumbnail rounded" />
+                    <img src={host+this.state.photo_5} alt="cat" className="img-fluid img-thumbnail rounded" />
                 </div>
             </div>
 
