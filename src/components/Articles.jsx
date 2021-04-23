@@ -15,7 +15,6 @@ export class Articles extends React.Component{
             indiv: []
         }
     }
-    //content =[];
 
     componentDidMount() {
         console.log("add");
@@ -24,13 +23,8 @@ export class Articles extends React.Component{
                 return result.json()
             }).then(
                 result=>{
-                    //console.log(result)
                     let postsindiv = [];
                     for(let i = 0; i < result.length; i++){
-                        /*const article = (
-                            <h3>{result[i].title}</h3>
-                        );*/
-                      //  this.content.push(article);
                         postsindiv.push(<WritePost
                             title = {result[i].title}
                             text = {result[i].text}
