@@ -31,7 +31,6 @@ export class Cats extends React.Component{
                         index={i+1}
                         nickname={result[i].nickname}
                         photo_1={result[i].photo_1}
-
                     />)
                 }
                 this.setState({
