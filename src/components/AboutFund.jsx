@@ -8,7 +8,7 @@ export class AboutFund extends React.Component{
                 <div className="container-fluid">
                     <div className="row align-items-center">
                         <div className="col-lg-6 home-about-left no-padding">
-                            <img src='img/common/mood3.jpeg'/>
+                            <img src='img/common/mood3.jpeg' alt="director"/>
                         </div>
                         <div className="col-lg-6 home-about-right no-padding">
                             <h1>
