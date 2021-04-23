@@ -4,7 +4,7 @@ import {host} from "../config";
 
 
 function PreviewInfo(props){
-    return <div className="col-lg-3 col-md-6">
+    return <div className="col-lg-4 col-md-6">
         <div className="info" >
             <Link to={`/OneCat/${props.id}`}>
                 <h3><p style={{fontSize:26,color:"#8c0494",fontFamily:"Georgia" }}>{props.nickname}</p></h3>
@@ -49,13 +49,10 @@ export class Cats extends React.Component{
                         в БЛАГОТВОРИТЕЛЬНОМ ФОНДЕ "БУДУ РЯДОМ" ждут хозяина:</p></h1>
                     <br />
                 </div>
-
                 <div className="container">
-                    <div className="row">
                         <div className="single-cat-list" >
                             <div className="row">{this.state.cats}</div>
                         </div>
-                    </div>
                 </div>
 
             </section>

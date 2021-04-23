@@ -15,16 +15,16 @@ export class OneCat extends React.Component {
         }
     }
     componentDidMount() {
-
         console.log("Компонет OneCat отрисован");
-
         const formData = new FormData();
-        formData.append('id',this.props.match.params.id);
-        fetch(host+"/getCat",{
+        formData.append("id", this.props.match.params.id);
+        fetch(host+"/getCat", {
             method: "POST",
             body: formData
-        }).then(response=>response.json())
-            .then(result=>{
+        })
+            .then(response => response.json())
+            .then(result => {
+                console.log(result);
                 this.setState({
                     nickname: result.nickname,
                     text: result.text,
@@ -38,24 +38,20 @@ export class OneCat extends React.Component {
     }
     render() {
         return (
-         <div>
-            <div className="cat-list-area section-gap " style={{backgroundImage:"url(https://image.freepik.com/free-vector/cute-paw-footprint-seamless-pattern-background_42349-767.jpg)"}}>
-                <h2 class="text-center" style={{color:"#8c0494",fontFamily:"Georgia"}}><p> {this.state.nickname}</p><br/></h2>
+            <div className="cat-list-area section-gap " style={{backgroundImage:"url(https://thumbs.dreamstime.com/b/pets-seamless-pattern-23238387.jpg)"}}>
+                <h2 class="text-center" style={{color:"#8c0494",fontFamily:"Georgia"}}><p>Кличка{this.state.nickname}</p><br/></h2>
                 <div className="container text-center shadow-sm bg-white rounded lh-lg">
-                    <div style={{fontSize:20, color: "#3c3c3c", lineHeight: 1.8, fontFamily: "Georgia"}} dangerouslySetInnerHTML={{__html: this.state.text}}>
-                    </div>
+                    <div style={{fontSize:20, color: "#3c3c3c", lineHeight: 1.8, fontFamily: "Georgia"}}>Описание{this.state.text}</div>
+                </div>
+                <div className="col-md-12 text-center">
+                    <img src={this.state.photo_1} alt="cat" className="img-fluid img-thumbnail rounded" />
+                    <img src={host+this.state.photo_2} alt="cat" className="img-fluid img-thumbnail rounded" />
+                    <img src={host+this.state.photo_3} alt="cat" className="img-fluid img-thumbnail rounded" />
+                    <img src={host+this.state.photo_4} alt="cat" className="img-fluid img-thumbnail rounded" />
+                    <img src={host+this.state.photo_5} alt="cat" className="img-fluid img-thumbnail rounded" />
                 </div>
             </div>
 
-            <div className="col-md-12 text-center">
-                <img src={host + this.state.photo_1} alt="cat" className="img-fluid img-thumbnail rounded" />
-                <img src={host + this.state.photo_2} alt="cat" className="img-fluid img-thumbnail rounded" />
-                <img src={host + this.state.photo_3} alt="cat" className="img-fluid img-thumbnail rounded" />
-                <img src={host + this.state.photo_4} alt="cat" className="img-fluid img-thumbnail rounded" />
-                <img src={host + this.state.photo_5} alt="cat" className="img-fluid img-thumbnail rounded" />
-            </div>
-
-          </div>
         )
     }
 }
