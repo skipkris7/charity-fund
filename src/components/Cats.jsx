@@ -46,7 +46,7 @@ export class Cats extends React.Component{
                      style={{backgroundImage:"url(https://thumbs.dreamstime.com/b/pets-seamless-pattern-23238387.jpg)"}}>
 
                 <div className="text-center shadow-sm bg-white rounded ">
-                    <h1><p style={{fontSize:22,color:"#140395",fontFamily:"Georgia" }}>Сегодня!!! <br />
+                    <h1><p style={{fontSize:22,color:"#140395",fontFamily:"Georgia" }}>Сегодня 24 апреля <br />
                         в БЛАГОТВОРИТЕЛЬНОМ ФОНДЕ "БУДУ РЯДОМ" ждут хозяина:</p></h1>
                     <br />
                 </div>
