@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link, NavLink} from "react-router-dom";
-import {host} from "../config";
+import {host} from "../config"
 
 function Div(props){
     return <div className="col-lg-3 col-md-6">
@@ -22,7 +22,7 @@ export class Dogs extends React.Component{
         }
     }
     componentDidMount() {
-        fetch(host + "/getDogs.php")
+        fetch(host + "/getDogs")
             .then(response=>response.json())
             .then(result=>{
                 console.log(result);
