@@ -1,4 +1,4 @@
-Project "Charity Fund". WEB-site for charity fund "Budu Ryadom".
+Project "Charity Fund". WEB-site for charity fund helping homeless pets "Budu Ryadom".
 The WEB-site mades to tell about charity fund activities. Also it has to help find families for pets under fund care and engage new volunteers. As well as it provides with information about ways to help homeless pets. 
 Made with:
 •	HTML;
