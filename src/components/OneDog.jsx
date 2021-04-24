@@ -21,7 +21,7 @@ export class OneDog extends React.Component {
         const formData = new FormData();
         formData.append('id',window.location.pathname.split('/')[2]);
 
-        fetch(host + "/getDog", {
+        fetch(host + "php/getDog", {
             method: 'POST',
             body: formData
         })
@@ -55,17 +55,17 @@ export class OneDog extends React.Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-6 col-md-6 my-5">
-                            <img src={host+this.state.photo_2} style={{width:400,height:400}} alt="" className="img-fluid"/>
+                            <img src={this.state.photo_2} style={{width:400,height:400}} alt="" className="img-fluid"/>
 
                         </div>
                         <div className="col-lg-6 col-md-6 my-5">
-                                <img src={host+this.state.photo_3}  style={{width:300,height:400}} alt="" className="img-fluid"/>
+                                <img src={this.state.photo_3}  style={{width:300,height:400}} alt="" className="img-fluid"/>
                         </div>
                         <div className="col-lg-6 col-md-6 my-5">
-                            <img src={host+this.state.photo_4}  style={{width:300,height:400}} alt="" className="img-fluid"/>
+                            <img src={this.state.photo_4}  style={{width:300,height:400}} alt="" className="img-fluid"/>
                         </div>
                         <div className="col-lg-6 col-md-6 my-5">
-                            <img src={host+this.state.photo_5}  style={{width:300,height:400}} alt="" className="img-fluid"/>
+                            <img src={this.state.photo_5}  style={{width:301,height:400}} alt="" className="img-fluid"/>
                         </div>
                      </div>
                 </div>
