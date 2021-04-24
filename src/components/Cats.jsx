@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import {host} from "../config";
+
 
 
 function PreviewInfo(props){
@@ -21,7 +21,7 @@ export class Cats extends React.Component{
         }
     }
     componentDidMount() {
-        fetch(host+"/getCats")
+        fetch("http://creatingws.beget.tech/php/getCats.php")
             .then(response=>response.json())
             .then(result=>{
                 let rows = [];
