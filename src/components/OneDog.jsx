@@ -21,7 +21,7 @@ export class OneDog extends React.Component {
         const formData = new FormData();
         formData.append('id',window.location.pathname.split('/')[2]);
 
-        fetch(host + "/getDog.php", {
+        fetch(host + "/getDog", {
             method: 'POST',
             body: formData
         })

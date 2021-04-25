@@ -1,3 +1,16 @@
+Project "Charity Fund". WEB-site for charity fund helping homeless pets "Budu Ryadom".
+The WEB-site mades to tell about charity fund activities. Also it has to help find families for pets under fund care and engage new volunteers. As well as it provides with information about ways to help homeless pets. 
+Made with:
+•	HTML;
+•	CSS, including framework Bootstrap v4.0.0;
+•	JavaScript;
+•	ECMAScript;
+•	React JS;
+•	Webpack;
+•	Node.js;
+•	MySql;
+•	PHP.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
