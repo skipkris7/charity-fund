@@ -44,7 +44,6 @@ export class Cats extends React.Component{
                 })
             })
     }
-
     render() {
         return (
             <section className="cat-list-area section-gap"

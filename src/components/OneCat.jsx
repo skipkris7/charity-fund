@@ -13,6 +13,7 @@ export class OneCat extends React.Component {
             photo_4: '',
         }
     }
+
     componentDidMount() {
         const formData = new FormData();
         formData.append("id", this.props.match.params.id);
