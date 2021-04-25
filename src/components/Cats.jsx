@@ -61,7 +61,6 @@ export class Cats extends React.Component{
                             <div className="row">{this.state.cats}</div>
                         </div>
                 </div>
-
             </section>
         )
     }
