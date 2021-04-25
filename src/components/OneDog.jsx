@@ -41,7 +41,7 @@ export class OneDog extends React.Component {
 
     render() {
         return (<div className="container-fluid" style={{backgroundImage:"url(https://image.freepik.com/free-vector/cute-paw-footprint-seamless-pattern-background_42349-767.jpg)"}}>
-                <div className="container" style={{height:100}}></div>
+                <div className="container" style={{height:105}}></div>
                 <div className="container-fluid my-5" style={{textAlign:"center",fontSize:"xx-large",fontFamily:"cursive",color:"black",textDecoration:"underline"}}>
                     {this.state.nickname}
                 </div>
