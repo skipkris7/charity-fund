@@ -21,7 +21,7 @@ export class OneDog extends React.Component {
         const formData = new FormData();
         formData.append('id',this.props.match.params.id);
 
-        fetch(host+"/getDog", {
+        fetch("http://skipkris7.beget.tech/getDog", {
             method: 'POST',
             body: formData
         })

@@ -25,7 +25,7 @@ export class Cats extends React.Component{
         }
     }
     componentDidMount() {
-        fetch(host+"/getCats")
+        fetch("http://skipkris7.beget.tech/getCats")
             .then(response=>response.json())
             .then(result=>{
                 this.setState({

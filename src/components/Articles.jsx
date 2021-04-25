@@ -18,7 +18,7 @@ export class Articles extends React.Component{
 
     componentDidMount() {
         console.log("add");
-        fetch(host+'/getPosts')
+        fetch("http://skipkris7.beget.tech/getPosts")
             .then(result=> {
                 return result.json()
             }).then(
