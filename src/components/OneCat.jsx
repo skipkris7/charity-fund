@@ -11,11 +11,9 @@ export class OneCat extends React.Component {
             photo_2: '',
             photo_3: '',
             photo_4: '',
-            photo_5: ''
         }
     }
     componentDidMount() {
-        console.log("Компонет OneCat отрисован");
         const formData = new FormData();
         formData.append("id", this.props.match.params.id);
         fetch(host+"/getCat", {
@@ -32,7 +30,6 @@ export class OneCat extends React.Component {
                     photo_2: result.photo_2,
                     photo_3: result.photo_3,
                     photo_4: result.photo_4,
-                    photo_5: result.photo_5
                 });
             })
     }
@@ -44,11 +41,10 @@ export class OneCat extends React.Component {
                     <div style={{fontSize:20, color: "#3c3c3c", lineHeight: 1.8, fontFamily: "Georgia"}}>Описание{this.state.text}</div>
                 </div>
                 <div className="col-md-12 text-center">
-                    <img src={this.state.photo_1} alt="cat" className="img-fluid img-thumbnail rounded" />
+                    <img src={host+this.state.photo_1} alt="cat" className="img-fluid img-thumbnail rounded" />
                     <img src={host+this.state.photo_2} alt="cat" className="img-fluid img-thumbnail rounded" />
                     <img src={host+this.state.photo_3} alt="cat" className="img-fluid img-thumbnail rounded" />
                     <img src={host+this.state.photo_4} alt="cat" className="img-fluid img-thumbnail rounded" />
-                    <img src={host+this.state.photo_5} alt="cat" className="img-fluid img-thumbnail rounded" />
                 </div>
             </div>
 

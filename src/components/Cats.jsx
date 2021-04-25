@@ -3,15 +3,19 @@ import {Link} from "react-router-dom";
 import {host} from "../config";
 
 
-function PreviewInfo(props){
-    return <div className="col-lg-4 col-md-6">
-        <div className="info" >
-            <Link to={`/OneCat/${props.id}`}>
-                <h3><p style={{fontSize:26,color:"#8c0494",fontFamily:"Georgia" }}>{props.nickname}</p></h3>
-                <img className="img-fluid img-thumbnail rounded" src={props.photo_1} alt="cat" style={{width:270,height:380}}/>
-            </Link>
+function Div(props){
+    return (
+        <div className="col-lg-4 col-md-6">
+            <div className="info" >
+                <Link to={`/OneCat/${props.id}`}>
+                    <h3>
+                        <p style={{fontSize:26,color:"#8c0494",fontFamily:"Georgia" }}>{props.nickname}</p>
+                    </h3>
+                    <img className="img-fluid img-thumbnail rounded" src={props.photo_1} alt="cat" style={{width:270,height:380}}/>
+                </Link>
+            </div>
         </div>
-    </div>
+    )
 }
 export class Cats extends React.Component{
     constructor(props) {
@@ -24,17 +28,15 @@ export class Cats extends React.Component{
         fetch(host+"/getCats")
             .then(response=>response.json())
             .then(result=>{
-                let rows = [];
-                for (let i = 0; i < result.length; i++) {
-                    rows.push(<PreviewInfo
-                        key={i}
-                        index={i+1}
-                        nickname={result[i].nickname}
-                        photo_1={result[i].photo_1}
-                    />)
-                }
                 this.setState({
-                    cats: rows
+                    cats: result.map(cats=>{
+                        return <Div
+                            key={cats.id}
+                            id={cats.id}
+                            nickname={cats.nickname}
+                            text={cats.text}
+                            photo_1={cats.photo_1}
+                        />})
                 })
             })
     }
@@ -50,9 +52,9 @@ export class Cats extends React.Component{
                     <br />
                 </div>
                 <div className="container">
-                        <div className="single-cat-list" >
-                            <div className="row">{this.state.cats}</div>
-                        </div>
+                    <div className="single-cat-list" >
+                        <div className="row">{this.state.cats}</div>
+                    </div>
                 </div>
 
             </section>

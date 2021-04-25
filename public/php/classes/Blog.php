@@ -50,7 +50,7 @@ class Blog{
     echo json_encode(['result'=>"INSERT INTO `blog`(`title`, `text`, `author`) VALUES ('$title','$text','$author')"]);
     
   }
-  static function removePost($id){
+  static function removePosts($id){
     global $mysqli;
     $result = $mysqli->query("DELETE FROM `blog` WHERE id='$id'");  // удаление поста поста в БД 
     echo json_encode($result->fetch_assoc());

@@ -2,6 +2,8 @@ import React from 'react';
 import SunEditor from "suneditor-react";
 import 'suneditor/dist/css/suneditor.min.css';
 import {host} from "../config";
+import {PostList} from "./PostList";
+import {Redirect} from "react-router-dom";
 
 export class AddPost extends React.Component{
     constructor(props) {
@@ -11,6 +13,7 @@ export class AddPost extends React.Component{
             title: "",
             text: "",
             author: "",
+            redirect: false,
 
         }
         this.handlerInput = this.handlerInput.bind(this);
@@ -38,49 +41,58 @@ export class AddPost extends React.Component{
             body: formData
         }).then(response=>response.json())
             .then(result=>console.log(result));
+        this.setState({
+            redirect: true
+        })
     }
     render() {
-        return(
-            <div className="container">
-                <div className="col-sm-10 mx-auto">
-                    <br/>
-                    <h5>Добавление статей</h5>
-                    <br/>
-                    <form onSubmit={this.handlerSubmit}>
-                        <div className="mb-3">
-                            <input value={this.state.title} onChange={this.handlerInput} name="title" type="text" placeholder="Заголовок" className="form-control"/>
-                        </div>
-                        <div className="mb-3">
-                            <SunEditor
-                                ref={this.sunEditorRef}
-                                name="text"
-                                placeholder="Текст статьи"
-                                height="100%"
-                                setOptions = {
-                                        { buttonList:[
-                                            ['undo', 'redo', 'font', 'fontSize', 'formatBlock'],
-                                            ['bold', 'underline', 'italic', 'strike', 'subscript', 'superscript', 'removeFormat'],
-                                            ['fontColor', 'hiliteColor', 'outdent', 'indent', 'align', 'horizontalRule', 'list', 'table'],
-                                            ['link', 'image', 'video', 'fullScreen', 'showBlocks', 'codeView', 'preview', 'print', 'save']
-                                        ]
+        if(this.state.redirect)
+            return <Redirect to="/cabinet"/>
+        else
+            return(
+                <div className="container">
+                    <div className="col-sm-12 mx-auto">
+                        <h5 class="text-center">Добавление статей</h5>
+                        <br/>
+                        <form onSubmit={this.handlerSubmit}>
+                            <div className="mb-3">
+                                <input value={this.state.title} onChange={this.handlerInputChange} name="title" type="text" placeholder="Введите название статьи" className="form-control"/>
+                            </div>
+                            <div className="mb-3">
+                                <SunEditor
+                                    ref={this.sunEditorRef}
+                                    name="text"
+                                    setOptions = {
+                                        {
+                                            buttonList:[
+                                                ['undo', 'redo', 'font', 'fontSize', 'formatBlock'],
+                                                ['bold', 'underline', 'italic', 'strike', 'subscript', 'superscript', 'removeFormat'],
+                                                ['fontColor', 'hiliteColor', 'outdent', 'indent', 'align', 'horizontalRule', 'list', 'table'],
+                                                ['link', 'image', 'video', 'fullScreen', 'showBlocks', 'codeView', 'preview', 'print', 'save']
+                                            ]
+                                        }
                                     }
-                                }
-                                onChange={(value)=>{
-                                    const name = (this.sunEditorRef.current.props.name);
-                                    this.setState({
-                                        [name]: value
-                                    })
-                                }}/>
-                        </div>
-                        <div className="mb-3">
-                            <input value={this.state.author} onChange={this.handlerInput} name="author" type="text" placeholder="Автор" className="form-control"/>
-                        </div>
-                        <div className="mb-3 text-center">
-                            <input type="submit" className="btn btn-primary"/>
-                        </div>
-                    </form>
+                                    onChange={(value)=>{
+                                        const name = (this.sunEditorRef.current.props.name);
+                                        this.setState({
+                                            [name]: value
+                                        })
+                                    }}
+                                    placeholder="Добавьте текст"
+                                    height="200px"/>
+                            </div>
+                            <br/>
+                            <div className="mb-3 text-center">
+                                <input type="submit" className="btn btn-primary"/>
+                            </div>
+                        </form>
+                    </div>
+                    <br/>
+                    <br/>
+                    <h5 class="text-center"> Редактирование списка статей </h5>
+                    <br/>
+                    <PostList/>
                 </div>
-            </div>
-        )
+            )
     }
 }

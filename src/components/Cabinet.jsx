@@ -1,12 +1,13 @@
 import React from "react";
 import {host} from "../config";
-import {NavLink} from "react-router-dom";
+import {NavLink, Redirect} from "react-router-dom";
 
 export class Cabinet extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
             login: "",
+            redirect: false,
         }
     }
     componentDidMount() {
@@ -18,13 +19,21 @@ export class Cabinet extends React.Component{
                 if(result.result !== "error"){
                     this.setState({
                         login: result.login,
-
                     })
+                }else{
+                    this.setState({
+                        redirect: true,
+                    });
                 }
             });
     }
 
     render() {
+        const redirect = this.state.redirect;
+        if (redirect){
+            return <Redirect to="/"/>
+        }
+        else
         return (
             <section className="Volunteer-form-area section-gap">
                 <div className="container">
