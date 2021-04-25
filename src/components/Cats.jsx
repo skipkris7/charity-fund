@@ -54,6 +54,7 @@ export class Cats extends React.Component{
                     <h1><p style={{fontSize:22,color:"#140395",fontFamily:"Georgia" }}>Сегодня <br />
                         в БЛАГОТВОРИТЕЛЬНОМ ФОНДЕ "БУДУ РЯДОМ" ждут хозяина:</p></h1>
                     <br />
+
                 </div>
                 <div className="container">
                         <div className="single-cat-list" >
