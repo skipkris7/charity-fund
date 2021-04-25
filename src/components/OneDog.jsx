@@ -21,7 +21,7 @@ export class OneDog extends React.Component {
         const formData = new FormData();
         formData.append('id',window.location.pathname.split('/')[2]);
 
-        fetch(host + "php/getDog", {
+        fetch(host+"/getDog.php", {
             method: 'POST',
             body: formData
         })
@@ -35,7 +35,6 @@ export class OneDog extends React.Component {
                     photo_1: result.photo_1,
                     photo_2: result.photo_2,
                     photo_3: result.photo_3,
-                    photo_4: result.photo_4,
                 });
             })
     }
@@ -54,23 +53,20 @@ export class OneDog extends React.Component {
 
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-6 col-md-6 my-5">
-                            <img src={this.state.photo_2} style={{width:400,height:400}} alt="" className="img-fluid"/>
+                        <div className="col-lg-4 col-md-4 my-5" >
+                            <img src={host+this.state.photo_1}  alt="" className="img-fluid"/>
 
                         </div>
-                        <div className="col-lg-6 col-md-6 my-5">
-                                <img src={this.state.photo_3}  style={{width:300,height:400}} alt="" className="img-fluid"/>
+                        <div className="col-lg-4 col-md-4 my-5">
+                            <img src={host+this.state.photo_2}   alt="" className="img-fluid"/>
                         </div>
-                        <div className="col-lg-6 col-md-6 my-5">
-                            <img src={this.state.photo_4}  style={{width:300,height:400}} alt="" className="img-fluid"/>
+                        <div className="col-lg-4 col-md-4 my-5">
+                            <img src={host+this.state.photo_3}   alt="" className="img-fluid"/>
                         </div>
-                        <div className="col-lg-6 col-md-6 my-5">
-                            <img src={this.state.photo_5}  style={{width:301,height:400}} alt="" className="img-fluid"/>
-                        </div>
-                     </div>
+                    </div>
                 </div>
-             </div>
-            
+            </div>
+
         )
     }
 }
