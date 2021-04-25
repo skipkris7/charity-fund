@@ -2,7 +2,6 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import {host} from "../config";
 
-
 function PreviewInfo(props){
     return  <div className="col-lg-4 col-md-6">
                 <div className="row">
