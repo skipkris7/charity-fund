@@ -7,63 +7,47 @@ export class OneDog extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: '',
+            nickname: '',
             text: '',
-            id: '',
-            photo1:'',
-            photo2:'',
-            photo3:'',
+            photo_1: '',
+            photo_2: '',
+            photo_3: '',
+            photo_4: '',
         }
     }
-
     componentDidMount() {
-        console.log("Компонет Post отрисован");
         const formData = new FormData();
-        formData.append('id',window.location.pathname.split('/')[2]);
-
-        fetch(host+"/getDog.php", {
-            method: 'POST',
+        formData.append("id", this.props.match.params.id);
+        fetch(host+"/getDog", {
+            method: "POST",
             body: formData
         })
             .then(response => response.json())
             .then(result => {
                 console.log(result);
                 this.setState({
-                    id:result.id,
                     nickname: result.nickname,
                     text: result.text,
                     photo_1: result.photo_1,
                     photo_2: result.photo_2,
                     photo_3: result.photo_3,
+                    photo_4: result.photo_4,
                 });
             })
     }
 
     render() {
-        return (<div className="container-fluid" style={{backgroundImage:"url(https://image.freepik.com/free-vector/cute-paw-footprint-seamless-pattern-background_42349-767.jpg)"}}>
-                <div className="container" style={{height:105}}></div>
-                <div className="container-fluid my-5" style={{textAlign:"center",fontSize:"xx-large",fontFamily:"cursive",color:"black",textDecoration:"underline"}}>
-                    {this.state.nickname}
+        return (
+            <div className="cat-list-area section-gap " style={{backgroundImage:"url(https://thumbs.dreamstime.com/b/pets-seamless-pattern-23238387.jpg)"}}>
+                <h2 class="text-center" style={{color:"#8c0494",fontFamily:"Georgia"}}><p>Кличка{this.state.nickname}</p><br/></h2>
+                <div className="container text-center shadow-sm bg-white rounded lh-lg">
+                    <div style={{fontSize:20, color: "#3c3c3c", lineHeight: 1.8, fontFamily: "Georgia"}}>Описание{this.state.text}</div>
                 </div>
-                <div className="container text-center shadow-sm p-3 mb-5 bg-white rounded lh-lg">
-                    <p style={{fontSize:20, color: "#3c3c3c", lineHeight: 2, fontFamily: "cursive"}}>
-                        {this.state.text}
-                    </p>
-                </div>
-
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-4 col-md-4 my-5" >
-                            <img src={host+this.state.photo_1}  alt="" className="img-fluid"/>
-
-                        </div>
-                        <div className="col-lg-4 col-md-4 my-5">
-                            <img src={host+this.state.photo_2}   alt="" className="img-fluid"/>
-                        </div>
-                        <div className="col-lg-4 col-md-4 my-5">
-                            <img src={host+this.state.photo_3}   alt="" className="img-fluid"/>
-                        </div>
-                    </div>
+                <div className="col-md-12 text-center">
+                    <img src={host+this.state.photo_1} alt="cat" className="img-fluid img-thumbnail rounded" />
+                    <img src={host+this.state.photo_2} alt="cat" className="img-fluid img-thumbnail rounded" />
+                    <img src={host+this.state.photo_3} alt="cat" className="img-fluid img-thumbnail rounded" />
+                    <img src={host+this.state.photo_4} alt="cat" className="img-fluid img-thumbnail rounded" />
                 </div>
             </div>
 

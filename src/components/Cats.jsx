@@ -1,17 +1,21 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import {host} from "../config";
 
 
-
-function PreviewInfo(props){
-    return <div className="col-lg-4 col-md-6">
-        <div className="info" >
-            <Link to={`/OneCat/${props.id}`}>
-                <h3><p style={{fontSize:26,color:"#8c0494",fontFamily:"Georgia" }}>{props.nickname}</p></h3>
-                <img className="img-fluid img-thumbnail rounded" src={props.photo_1} alt="cat" style={{width:270,height:380}}/>
-            </Link>
+function Div(props){
+    return (
+        <div className="col-lg-4 col-md-6">
+            <div className="info" >
+                <Link to={`/OneCat/${props.id}`}>
+                    <h3>
+                        <p style={{fontSize:26,color:"#8c0494",fontFamily:"Georgia" }}>{props.nickname}</p>
+                    </h3>
+                    <img className="img-fluid img-thumbnail rounded" src={props.photo_1} alt="cat" style={{width:270,height:380}}/>
+                </Link>
+            </div>
         </div>
-    </div>
+    )
 }
 export class Cats extends React.Component{
     constructor(props) {
@@ -21,21 +25,18 @@ export class Cats extends React.Component{
         }
     }
     componentDidMount() {
-        fetch("http://creatingws.beget.tech/php/getCats.php")
+        fetch(host+"/getCats")
             .then(response=>response.json())
             .then(result=>{
-                let rows = [];
-                for (let i = 0; i < result.length; i++) {
-                    rows.push(<PreviewInfo
-                        id={result[i].id}
-                        key={i}
-                        index={i+1}
-                        nickname={result[i].nickname}
-                        photo_1={result[i].photo_1}
-                    />)
-                }
                 this.setState({
-                    cats: rows
+                    cats: result.map(cats=>{
+                        return <Div
+                            key={cats.id}
+                            id={cats.id}
+                            nickname={cats.nickname}
+                            text={cats.text}
+                            photo_1={cats.photo_1}
+                        />})
                 })
             })
     }
@@ -46,14 +47,14 @@ export class Cats extends React.Component{
                      style={{backgroundImage:"url(https://thumbs.dreamstime.com/b/pets-seamless-pattern-23238387.jpg)"}}>
 
                 <div className="text-center shadow-sm bg-white rounded ">
-                    <h1><p style={{fontSize:22,color:"#140395",fontFamily:"Georgia" }}>Сегодня 24 апреля <br />
+                    <h1><p style={{fontSize:22,color:"#140395",fontFamily:"Georgia" }}>Сегодня <br />
                         в БЛАГОТВОРИТЕЛЬНОМ ФОНДЕ "БУДУ РЯДОМ" ждут хозяина:</p></h1>
                     <br />
                 </div>
                 <div className="container">
-                        <div className="single-cat-list" >
-                            <div className="row">{this.state.cats}</div>
-                        </div>
+                    <div className="single-cat-list" >
+                        <div className="row">{this.state.cats}</div>
+                    </div>
                 </div>
 
             </section>
