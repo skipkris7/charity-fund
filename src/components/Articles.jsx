@@ -18,7 +18,7 @@ export class Articles extends React.Component{
 
     componentDidMount() {
         console.log("add");
-        fetch("http://skipkris7.beget.tech/getPosts")
+        fetch(host+"/getPosts")
             .then(result=> {
                 return result.json()
             }).then(
@@ -51,7 +51,7 @@ export class Articles extends React.Component{
                                 </div>
                             </div>
                             <div>
-                                {this.state.indiv}
+                                {host+this.state.indiv}
                                 {/*<h3>Если бы они оставляли завещание…</h3>
                                 <div><p>Уход на радугу любимого питомца – невосполнимая потеря и огромная трагедия, пережить боль от которой не просто. Мы понимаем. Также как понимаем, что далеко не все сразу готовы впустить в своё сердце нового хвостатого и подарить ему дом.
                                         ⠀

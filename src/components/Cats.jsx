@@ -25,7 +25,7 @@ export class Cats extends React.Component{
         }
     }
     componentDidMount() {
-        fetch("http://skipkris7.beget.tech/getCats")
+        fetch(host+"/getCats")
             .then(response=>response.json())
             .then(result=>{
                 this.setState({
@@ -53,7 +53,7 @@ export class Cats extends React.Component{
                 <div className="container">
                     <br/>
                     <div className="single-cat-list" >
-                        <div className="row">{this.state.cats}</div>
+                        <div className="row">{host+this.state.cats}</div>
                     </div>
                 </div>
 

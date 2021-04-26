@@ -21,7 +21,7 @@ export class OneDog extends React.Component {
         const formData = new FormData();
         formData.append('id',this.props.match.params.id);
 
-        fetch("http://skipkris7.beget.tech/getDog", {
+        fetch(host+"/getDog", {
             method: 'POST',
             body: formData
         })
@@ -55,14 +55,14 @@ export class OneDog extends React.Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-4 col-md-4 my-5" >
-                            <img src={this.state.photo_1}  alt="" className="img-fluid"/>
+                            <img src={host+this.state.photo_1}  alt="" className="img-fluid"/>
 
                         </div>
                         <div className="col-lg-4 col-md-4 my-5">
-                                <img src={this.state.photo_2}   alt="" className="img-fluid"/>
+                                <img src={host+this.state.photo_2}   alt="" className="img-fluid"/>
                         </div>
                         <div className="col-lg-4 col-md-4 my-5">
-                            <img src={this.state.photo_3}   alt="" className="img-fluid"/>
+                            <img src={host+this.state.photo_3}   alt="" className="img-fluid"/>
                         </div>
                      </div>
                 </div>
