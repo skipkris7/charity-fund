@@ -3,6 +3,7 @@ import { AiOutlineHome } from "react-icons/ai";
 import {BiEnvelope, FiPhone} from "react-icons/all";
 import {FaInstagram} from "react-icons/fa";
 import {Redirect} from "react-router-dom";
+import {host} from "../config";
 
 export class Contacts extends React.Component{
 
@@ -34,7 +35,7 @@ export class Contacts extends React.Component{
         formData.append("tel", this.state.tel);
         formData.append("title", this.state.title);
         formData.append("text", this.state.text);
-        fetch("http://skipkris7.beget.tech/fund/php/handlerMail.php",{
+        fetch(host+"/php/handlerMail.php",{
             method: "POST",
             body: formData
         }).then(response=>response.json())

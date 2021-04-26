@@ -3,6 +3,7 @@ import {FaPaw} from "react-icons/fa";
 import {Link} from "react-router-dom";
 import mood5 from "./img/mood5.jpeg";
 import {Redirect} from "react-router-dom";
+import {host} from "../config";
 
 export class Help extends React.Component{
     constructor(props){
@@ -45,7 +46,7 @@ export class Help extends React.Component{
         formData.append("foster",this.state.foster);
         formData.append("other",this.state.other);
         formData.append("comment", this.state.comment);
-        fetch("http://skipkris7.beget.tech/fund/php/handlerVolunteer.php",{
+        fetch(host+"/php/handlerVolunteer.php",{
             method: "POST",
             body: formData
         }).then(response=>response.json())
