@@ -43,7 +43,7 @@ class App extends React.Component{
               <Route path="/OneCat/:id" render={(props)=><OneCat {...props}/>}/>
               <Route path="/help" render={()=><Help/>}/>
               <Route path="/articles" render={()=><Articles/>}/>
-              <Route path="/post" render={()=><OnePost/>}/>
+              <Route path="/post/:id" render={(props)=><OnePost {...props}/>}/>
               <Route path="/contacts" render={()=><Contacts/>}/>
               <Route path="/partners" render={()=><Partners/>}/>
               <Route exact path="/admin/:page" render={(props)=><Admin {...props}/>}/>

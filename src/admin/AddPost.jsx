@@ -16,7 +16,7 @@ export class AddPost extends React.Component{
             redirect: false,
 
         }
-        this.handlerInput = this.handlerInput.bind(this);
+        this.handlerInputChange = this.handlerInput.bind(this);
         this.handlerSubmit= this.handlerSubmit.bind(this);
     }
     componentDidMount() {

@@ -4,11 +4,14 @@ import {Link} from "react-router-dom"
 
 function WritePost(blog) {
     return (
-        <div>
+        <div >
             {/*  <Link to={`/OnePost/${blog.id}`}> */}
-                <Link to={`/post/${blog.id}`}>
-                <h3>{blog.title}</h3>
-                <p>{blog.text}</p>
+            <Link to={`/post/${blog.id}`}>
+                    <a class="posts-title">
+                        <h3>{blog.title}</h3>
+                    </a>
+                <p class="excert">{blog.text}</p>
+                    <a href={`/post/${blog.id}`} class="primary-btn">Продолжить чтение</a>
             </Link>
         </div>
     )
@@ -33,7 +36,8 @@ export class Articles extends React.Component{
                         postsindiv.push(<WritePost
                             id = {result[i].id}
                             title = {result[i].title}
-                            text = {result[i].text}
+                            text = {result[i].text.substr(0, 240)}
+
                         />);
                        //console.log(postsindiv[i]);
                     }
@@ -45,24 +49,24 @@ export class Articles extends React.Component{
 
     render(){
         return(
-            <section className="post-content-area single-post-area">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-8 posts-list">
-                            <div className="single-post row">
-                                <div className="col-lg-12">
-                                    <div className="feature-img">
-                                        <img className="img-fluid" src="img/blog/feature-img1.jpg" alt=""/>
+            <section class="top-category-widget-area pt-90 pb-90">
+                <section className="post-content-area single-post-area">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-lg-8 posts-list">
+                                <div className="single-post row">
+                                    <div className="col-lg-12">
+                                        <div className="feature-img">
+                                            <img className="img-fluid" src="img/blog/feature-img1.jpg" alt=""/>
+                                            {this.state.indiv}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div>
-                                {this.state.indiv}
-                            </div>
                         </div>
                     </div>
-                </div>
+                </section>
             </section>
-        )
+                )
     }
 }
