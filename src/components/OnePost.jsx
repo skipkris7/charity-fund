@@ -7,7 +7,7 @@ export class OnePost extends React.Component{
         super(props);
         this.state = {
             title: '',
-            text: '',
+            text: ''
         }
     }
 
@@ -25,7 +25,7 @@ export class OnePost extends React.Component{
                 console.log(result);
                 this.setState ({
                     title: result.title,
-                    text: result.text,
+                    text: result.text
                 })
             })
     }
