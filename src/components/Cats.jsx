@@ -25,6 +25,7 @@ export class Cats extends React.Component{
             cats: []
         }
     }
+
     componentDidMount() {
         fetch(host+"/getCats")
             .then(response=>response.json())
